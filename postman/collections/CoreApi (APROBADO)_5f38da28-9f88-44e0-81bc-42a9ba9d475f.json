@@ -1,0 +1,855 @@
+{
+    "info": {
+        "_postman_id": "244446bd-d85b-4448-9357-878627724f55",
+        "name": "CoreApi (APROBADO)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "internalapi",
+            "item": [
+                {
+                    "name": "Validate Service",
+                    "id": "68d33896-baae-4349-9395-a626cd1dd8e7",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/api/internalapi/ValidateCustomerAuth",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "internalapi",
+                                "ValidateCustomerAuth"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api/internalapi/ProductAssociation",
+                    "id": "2518af99-fe0c-4d1d-bbd9-14fd50c129b7",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/internalapi/ProductAssociation",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "internalapi",
+                                "ProductAssociation"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api/internalapi/ApplyFundsTransfer",
+                    "id": "906cf287-4c2d-473f-8638-45ba9ee6e3d8",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/internalapi/ApplyFundsTransfer",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "internalapi",
+                                "ApplyFundsTransfer"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api/internalapi/ApplyFundsTransfer2",
+                    "id": "f456a091-3058-403f-93c3-d7fcd2c1e1e8",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/internalapi/ApplyFundsTransfer2",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "internalapi",
+                                "ApplyFundsTransfer2"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api/internalapi/AuthorizeAvalMassiveTransaction",
+                    "id": "82d5561e-eb5c-416b-94bf-a94e9a13a29c",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/internalapi/AuthorizeAvalMassiveTransaction",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "internalapi",
+                                "AuthorizeAvalMassiveTransaction"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "0210ab89-4334-4901-bfda-e8161a50e239"
+        },
+        {
+            "name": "atm",
+            "item": [
+                {
+                    "name": "api/atm/GetTransactionCost",
+                    "id": "502584f5-fea4-4792-8abb-a45784c2fdca",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/atm/GetTransactionCost",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "atm",
+                                "GetTransactionCost"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api/atm/OTPWhitdrawal",
+                    "id": "cd137275-c550-4d62-a401-75561a09852f",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/atm/OTPWhitdrawal",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "atm",
+                                "OTPWhitdrawal"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api/atm/Reversal",
+                    "id": "d9b7b689-3af7-46f6-9c74-b043ab26e778",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/atm/Reversal",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "atm",
+                                "Reversal"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "83226e0b-f2aa-42e7-8528-04d191020e5e"
+        },
+        {
+            "name": "Onli_Bill_Agre",
+            "item": [
+                {
+                    "name": "api/Onli_Bill_Agre/Bill",
+                    "id": "9a4a0dd5-e357-4b0a-b8fb-85aa1c09dab2",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/Onli_Bill_Agre/Bill",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "Onli_Bill_Agre",
+                                "Bill"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api/Onli_Bill_Agre/Notify",
+                    "id": "2d5d52b1-60cd-4520-a597-c914f56ae6de",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/Onli_Bill_Agre/Notify",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "Onli_Bill_Agre",
+                                "Notify"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "New Request",
+                    "id": "5cec7a1c-1731-40f4-b517-a3bb45c18590",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/Onli_Bill_Agre/RollBack",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "Onli_Bill_Agre",
+                                "RollBack"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "cb2ab56b-e2a9-4698-b82f-2b97026b8db2"
+        },
+        {
+            "name": "Transfers",
+            "item": [
+                {
+                    "name": "api/Transfers/DebitBalance",
+                    "id": "d0d0e009-1681-439e-9d51-777b9400f321",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/Transfers/DebitBalance",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "Transfers",
+                                "DebitBalance"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api/Transfers/ProcessBalanceBlocking",
+                    "id": "d02da523-6574-49ee-8f15-a678b494ff75",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/Transfers/ProcessBalanceBlocking",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "Transfers",
+                                "ProcessBalanceBlocking"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api/Transfers/CreditBalance",
+                    "id": "f5295f00-ca9d-4df1-a8fe-683b271a0a1a",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/Transfers/CreditBalance",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "Transfers",
+                                "CreditBalance"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "354a9b1f-10e9-4145-8203-675cdc9d5a46"
+        },
+        {
+            "name": "DebitCardAuthorizationService",
+            "item": [
+                {
+                    "name": "Authorize",
+                    "id": "14ac9b19-fa64-4fd2-9c7e-a458018adf21",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/DebitCardAuthorizationService/Authorize",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "DebitCardAuthorizationService",
+                                "Authorize"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "CostQuery",
+                    "id": "7e3013bd-2838-4f23-a248-f042a69a204b",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/DebitCardAuthorizationService/CostQuery",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "DebitCardAuthorizationService",
+                                "CostQuery"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Rollback",
+                    "id": "25265557-c915-4ac2-9a62-1c90cd0aed07",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/DebitCardAuthorizationService/Rollback",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "DebitCardAuthorizationService",
+                                "Rollback"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "ValidationMediaAccounts",
+                    "id": "b1677a72-6b6c-4d13-9d55-96db056714b5",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/DebitCardAuthorizationService/ValidationMediaAccounts",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "DebitCardAuthorizationService",
+                                "ValidationMediaAccounts"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "effdb82c-eb76-4075-a663-a30ed1376745"
+        },
+        {
+            "name": "/GetVirtualDataByUserId",
+            "id": "6bec5c9b-b8ca-47fd-9312-62975c9b2ea3",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "pgNUavDr01OpcXn4W8ryAr3dEBNBmXFwWSp7stEzi6uvyREm4ZonhtxnG1ss_xfJ8ZMb-Hg1zrV8lKfL8yz8o1yft5nyHk3E1gMXhT3NlGO7nAMiqDaaMp7cHf8GhR4i5fZFaXK4_yG-u9hfGj5qpVkBcTWJLXJd98-yfHvLbAp1D072SzvT2Qz5IwGpwlUPs7a_lmOX0sxu6n46TjtiqCs8RSu2lz2WDYul7t_mISyhCL5EVHTjc9B0td9QoQaBPLnw_9B3ECIkE3T67qzbt1CZiR0tMBFYCLifxQ8flYEn6nmhd-knAeBWZCEdH0P_MtITg_xYKuvlq-yZiTRsnsKzyJ0qwNVA-1odKYut4Qsa7JGi0lcYMvmaoIIZ_07oRi5foDsNjeGFb-LkSubt4piO9Q52BxdPbB4coRYrhNWgP2WIEwkfX_hybgj_eEFJRoouv93ABP6SXRHi6Kil4n1ZTCkkZyzZymGyNPUD0cQk3MIxWrXJJmTL1ijpeoCo63B2tGFxiRcLNXsPku-MfKHp2fFowTVPG3axp4-JbVHqc7ao",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n \"UserId\":\"0868f21d-66c4-409a-9663-e0b36a8dab35\",\n \"ExternalId\":\"1234\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://app.mdapps-staging.com/api/LifeMilesService/GetVirtualDataByUserId",
+                    "protocol": "https",
+                    "host": [
+                        "app",
+                        "mdapps-staging",
+                        "com"
+                    ],
+                    "path": [
+                        "api",
+                        "LifeMilesService",
+                        "GetVirtualDataByUserId"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "/AuthorizeTransactionQR",
+            "id": "60348b68-e63d-4ee9-ab43-a6eda77484dd",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "u5pvovmMmMxCFJFUNqbgj3pM6Xg9-4GqHeB_l-KF14d8B73Apg6l1JOWvHh_mbuEhA8mmMJ-BbItT5aoDrNkgXYlIxPZQJP73IvfE9ywC_pvLL06egQsNRM7xSS8nYBlPF76jRIYzF9BO9XeELzxpc7cJauEIleYEd67OglpQ167MpKlvN0Hkv2WFamS8ISrEGcawDqwcYYidFgC6-ARZzbWMj4b1wKZ5-rTl8cECfaWtNMzbZgkY4GjYfnhwAjvyjXIir40bzyU3JkzaGpKqKnhBWyI_AmY2trKHqGIlKBi7K8llijshvZrpwRDFouN8dU6MbqEjVGORBPfUvX0vL0FVT_6KYGITIfm4bDGztD9F1BjkMu373PCZlagLDyVGqVisZF3x9AkyeE9n7PnPkur6YX84omO_qIdVQlxVNvLFlT5GICg2fBiEoqX0z8i57K8BjLerEHLuRiM-2Jwaqhg0dq0I04nksYo2Td7WEjOxt4iXjpqjDABKw5C7F5_0YMxerdhPeHcx4BD33c-b8mQ95fmRdisudTKKy9o3lvWkkic",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-RqUID",
+                        "value": "12388",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-Channel",
+                        "value": "MB",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-ClientDt",
+                        "value": "2014-05-19T10:00:00.000-05:00",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-CompanyId",
+                        "value": "00010016",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-GovIssueIdentType",
+                        "value": "CC",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-IPAddr",
+                        "value": "10.130.2.121",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-IdentSerialNum",
+                        "value": "1024258",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-Name",
+                        "value": "MB",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"TransactionStr\": \"0002015502010102115802CO5922KKO HOMECENTER CLL 17049250103RBM0014CO.COM.RBM.RED903001060000000016CO.COM.RBM.TRXID80260102IM0016CO.COM.RBM.CANAL91270105218900014CO.COM.RBM.SEC81250102030015CO.COM.RBM.CIVA601111001BOGOTA82240102190014CO.COM.RBM.IVA50290108102030400013CO.COM.RBM.CU8324010100015CO.COM.RBM.BASE5125010410200013CO.COM.RBM.CA62180708SRB0034608020084250102030015CO.COM.RBM.CINC520480118523010100014CO.COM.RBM.INC530317064320002ES0122KKO HOMECENTER CLL 17054051800063048270\",\n    \"AccountId\": \"0000002800922341\",\n    \"DevId\": \"PAXCOM11\",\n    \"RefId\": \"009\",\n    \"RefType\": \"WalletId\"\n}"
+                },
+                "url": {
+                    "raw": "https://public-api.mdapps-staging.com/api/LifeMiles/AuthorizeTransactionQR",
+                    "protocol": "https",
+                    "host": [
+                        "public-api",
+                        "mdapps-staging",
+                        "com"
+                    ],
+                    "path": [
+                        "api",
+                        "LifeMiles",
+                        "AuthorizeTransactionQR"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "/CancelTransactionQR",
+            "id": "082f4498-8dfe-4146-8d8b-74731d69cc52",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "gWAcOP04JtOinVYCjvYnkUFI-IyRibtfChTZcGmeqohjzvnO_drAByajigFeJwwncKHVkHX67ZoksFj5hD0sHG6ouVmlOpz3N6xy4w50fVMuF4JMObZ4wNik_raCaTzotSmu9Ay-a0gKx7DgEMGwy9YeXIA9TrpRWoFi3bbdEMkGx732QRAr1RqI5SCSSglYQmpDtGR9Cl5YD2UFnERr_EZ9HvzYrUhPDAgede0WqHr6pZGoUH_vgiTCAWJJ8pNdKtXQujJIDrc0D4bJYNhtoMQEdZMtJVyifxUtmraZhQcMqhuRUgNTmcQr31VmeIhzecWyj8ZichbcUR_atuGcCesDXFFPtkqsLwA5c3jMjdPTPU3LmPvjGjDoibwi4KhfsM_bzZIOPzbSVT-BYCOkkfDIJ7Zb1-kBdoSz6qytOKtNp5lMscJ9G_bTeYrhEqDJMLyzvXDNHz7dK-SOitKbkaVZ3DSREb7wrdP3kXYkKqyGqkTWpsbqIt0qWIXsyrFQMkEgTKqfqtS3AQXRGcxuYh4tar9lA2E1s8Lxdvd6BF_WyGoG",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-RqUID",
+                        "value": "12577",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-Channel",
+                        "value": "MB",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-ClientDt",
+                        "value": "2014-05-19T10:00:00.000-05:00",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-CompanyId",
+                        "value": "00010016",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-GovIssueIdentType",
+                        "value": "CC",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-IPAddr",
+                        "value": "10.130.2.131",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-IdentSerialNum",
+                        "value": "1024258",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-Name",
+                        "value": "MB",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-IBM-Client-Id",
+                        "value": "84362c0b0284410d3b0f6939476fb591",
+                        "type": "text",
+                        "disabled": true
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"AccountId\": \"0000002800926683\",\n  \"PmtStatus\": {\n    \"EffDt\": \"2018-12-27T11:29:31-06:00\",\n    \"NextDt\": \"2018-12-27T11:29:02-05:00\",\n    \"StatusDesc\": \"Aprobada\",\n    \"StatusCode\": \"123456\"\n    },\n  \"DeviceAdmin\": {\n    \"Name\": \"010016087\",\n    \"SPName\": \"1245875\",\n    \"DevId\": \"000A21GT\",\n    \"TrnRqUID\": \"010000198\",\n    \"TrnSrc\": \"DINAMICO\",\n    \"AppPan\": \"QRCodeEMV\",\n    \"POSCaptureCapability\": \"Desconocido\",\n    \"Hash\": \"3216565441654\"\n },\n  \"Transaction\":{\n \"TrnRqUID\": \"54566547\"\n  },\n  \"Agreement\": {\n    \"Name\": \"BOUTIQUE LOCA\",\n    \"AgrmId\": \"5651\",\n    \"ContactInfo\": {\n      \"PostAddr\": {\n        \"PostalCode\": \"11001\",\n        \"CityId\": \"11001\"\n      }\n    }\n  },\n  \"NetworkRec\": {\n      \"NetworkRefId\": \"RBM\",\n      \"RefInfo\": {\n        \"RefType\": \"WalletId\",\n        \"RefId\": \"013\"\n      }\n    }\n}"
+                },
+                "url": {
+                    "raw": "https://public-api-qa.mdapps-staging.com/api/LifeMiles/CancelTransactionQR",
+                    "protocol": "https",
+                    "host": [
+                        "public-api-qa",
+                        "mdapps-staging",
+                        "com"
+                    ],
+                    "path": [
+                        "api",
+                        "LifeMiles",
+                        "CancelTransactionQR"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "/validateUserEvident",
+            "id": "c3cddee1-f236-45d1-b266-e5c9591431a5",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"FirstName\": \"Camila\",\n    \"LastName\": \"Quijano\",\n    \"CardNumber\": \"1013677980\",\n    \"ExpeditionDate\": \"2015-12-10T05:00:00.000Z\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}/validateUserEvident",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "validateUserEvident"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "/DebitCard/Issuance",
+            "id": "4439de8c-eb4b-4317-b00d-953ee7574dd0",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "U-Y6QsiLaUF3oZY5h34UTldF6fLsjqR_cbkTgUc0L1__VlSUzxaYQX_tm48TKlMDbkC1wOxnVywje0XVenyNdvSSBMDUsxz7lClUBXcY72anRtpm3FrLSAq1vq35QiM2OkzSBilnBI-TXp7SD8c_9BI1iyt20Q8MQzhyD_SU6ZnOp4XlPQfKSIR9YJdxkiFKDX5YSrRe8QqV3ee5Jra7x6u6odZQDPYClIFvl72m0hxURHV0GMZ-1DKG7WIOO5eywANAUzPcvg93ehpvLX2LMcNqDpUyU0gId4VHdntsGXkJDN--sdpXSWXeXb7t32L6pVowlkwYdej6EPbG0Nj_vKf_HiE-4FI3-y4vNwfFe9aClVVhp2SR0g6ICVRE9HYalGOc26kDAqN8cj7EdrbpD6V9ex6dpNzkGaArK9XX1Nlj1l5j9VWpxy2PykBzw5_uWjkopLgq_vs4K3Yk3SRwMLsXdDtFlEydD1qzDuWK3oDWGZzE6ERClWMrm8UHSrkt1ARfBwHdn4byScw2ZlWVzSb1FsBqpTeutFsPERph2lmwFGay",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"departmentId\": \"I9ipO9X4XsEN7b4mucospoRqVzxcbdPOgR9oaD+WKXWSA7AA4GfoJniEdiubFF+BRyumO5/d+4E1mwzoNr62aqlcIwhlGEYDbQHi7rT+MsuQUoXJeQcWqkMdlzgIrzc+geqv8DEKbDuGrPDeRRm3NzNog5TV/BJoQfU3DA5zwycMcjA01xxjE7lqjmUwBeuGNwuscz4uyMZC+UQ+/JNKV9XkAgzjXKsKQ/NYd2cmaHLQdCDTCh/XSpsonQs0QVN4bqRBUWdWzRtoYYtqSwuZdOX+gYNp3sIcLie3grbeLPul3ZGdKUhCDyfW50YwCZggK6RDR+XI5XM2Yd+m2mqr6Dk1mO0gi5jT6nphHNkAJyx06fHBJbRVHjiYyS4B+ysua4OJR4EwT1TEbUWcRXCg02OneiyX2qNYpn2IZ1NlQJhLNJYWkmMZtJNd8Db5QHWDmqDVTCPahb1VePXrkh3nt+9qRDpBuXKRNVnoGDCV1YHzI3Umht4NR/xv3AN8Mcst8PxLBrdPulDgsBvOKOxyYOmUXO2bcHAabrcTUd0OzZiTgzdc7Z0wTHSa0xvyiT66SbJVprv9v2I+BVDH5bd/DRXGkao53gGosvkf47Nt/tBo3ax4VJacuxCTx8Cx7buF097yN+yRQplNuCX1TJvrgwRKR81HK6zhDpX13U800H8=\",\n    \"cityId\": \"I9ipO9X4XsEN7b4mucospoRqVzxcbdPOgR9oaD+WKXWSA7AA4GfoJniEdiubFF+BRyumO5/d+4E1mwzoNr62aqlcIwhlGEYDbQHi7rT+MsuQUoXJeQcWqkMdlzgIrzc+geqv8DEKbDuGrPDeRRm3NzNog5TV/BJoQfU3DA5zwycMcjA01xxjE7lqjmUwBeuGNwuscz4uyMZC+UQ+/JNKV9XkAgzjXKsKQ/NYd2cmaHLQdCDTCh/XSpsonQs0QVN4bqRBUWdWzRtoYYtqSwuZdOX+gYNp3sIcLie3grbeLPul3ZGdKUhCDyfW50YwCZggK6RDR+XI5XM2Yd+m2mqr6Dk1mO0gi5jT6nphHNkAJyx06fHBJbRVHjiYyS4B+ysua4OJR4EwT1TEbUWcRXCg02OneiyX2qNYpn2IZ1NlQJhLNJYWkmMZtJNd8Db5QHWDmqDVTCPahb1VePXrkh3nt+9qRDpBuXKRNVnoGDCV1YHzI3Umht4NR/xv3AN8Mcst8PxLBrdPulDgsBvOKOxyYOmUXO2bcHAabrcTUd0OzZiTgzdc7Z0wTHSa0xvyiT66SbJVprv9v2I+BVDH5bd/DRXGkao53gGosvkf47Nt/tBo3ax4VJacuxCTx8Cx7buF097yN+yRQplNuCX1TJvrgwRKR81HK6zhDpX13U800H8=\",\n    \"completeAddress\": \"RpUtNObfw60fZCEs28dxGcaF7EMwZMlDg+PEv96IKIg9DJBFIKv0+CaxbaRaEhpOp3YuV/IgAX3r9Rbx9OvoQQYBustTrkMFpdG2g1y/55jcO2mAiBu9Sr0AAUDm7D4aroTDFhVEcwJpoiNabJkpunsBWnAh2Q2HrMJPAoen/aY0kduvJBr3RNDE5Sy9jIvhhpoVDewPNEmG5e8f8ixdx/D58cQMOsqzGO0lwf86e95CJlQA0pKFyiF8/aEkv0/iyDVcZtGcDmWcDDjfWRg0XYxo7aZv8mAvSFem4xdbVCsZJjvGGoYqLRRJB7KfzxrWc7m8bRScQvzQJ5Odn3T5zUs4OqoiLtZIIie3kSq9YjujuyAFAYNei4w4/uzniyCeJRu6lCPrSMwN5Hl8yP/mao5IIQ6NbbmR3IGMPm1dsrTpgMEpuW1rbNQgobBxUuBsEqG4p+sb5Zf2BnUiOrqdRMA4KDs0Ggz5LI3Bma3IBUYHxP7eCNjXaanj3kmKbGskLZ31+utBI3uMK4A3kiwpcQDUmDKrWrTK5VlmmxN0Dzxc1H2aojzn4C0ZHEgq5PkCy6OcEcgN9Fq1kb56o0XXqYK+9wCXx5+uVI2k1ReBjhULWK0RSglYWVz79R7MvgvimyhCQ37j/hFRLV5GvSW0u/0oa1OjQ11n5/4EfQgTWqE=\",\n    \"ipAddress\": \"WgfAOZjsgSkygFsPJVxEoYCGIMWsCftJytcbdGwKQpz4NiZ8pCQ1+UhN7Da2pLOSmbHy4+VwZQNImIvJ8F02eVVfbZ+gpA21mWwvuJvpO22HBWjDEShhOaKIl/sucD8IVQu7xVT1nDKKgSwcW8tyFLys2drVDO8M1fo1MBRovnHCg7P+ZlJzQVF+TmMB3ULZdJX0T53/0SvxwnJ8BI1B06Be6c8hE3R8d+FF1eLtgX9tOG5GWvMO4GvwJoGX2kt6vgZAZmiHsr+xZZWNq38luBBTZtbw5B2FzdTtvKW6d4+Csz985RWJUAgEIvMLqJVEYO4lXHjMLVcOHAytoeMM5PdBrD2k+4uVR3frWp9QjwQLbfl4E2K247y5I7JeBVe7pay14V0TcXgaXMo7FvLeVto43fUVK5QD6ZrEVQsueJQ6c4FwTEARvOKTibcrBPXFegy96AjbiXKJjc/ZZaVoPybfHRI/okqkCxDudBRUpGRQyWudhJMKWH1A/GkQRKs5yZzlZs1EjDB7UmeN+V6bd+P116UO/FbBjYyYtDl9GBVrIPCb1WgpSLeV81mwodJK+vtnRKKg/QyR8VaQ6fniI0p3aIdq2w05ymkKhbWRxEySqqVwOtnAXVVKhRB+65L/lOY+vVXIoNrl/SY4tsxH7TcsXhSKbZPLJU5u+c9k5AE=\",\n    \"termsConditions\": \"NhkM2thoZsUQ0O8PB4YbLlRuZwCloOhgT338kRIjZP+aME2yP4gcWdDSSfffEtDl1JgJKRlxP27A3ee9D6h7sf4D3rCtSNRUUrtEj73rqB6oaaxj9maUo3X4wR+eVoNufj9joD76ciaH4jbUOdMt8WcB1jwI4zjtR9je8JzgzgXnZmhXgz0bvvKkVjuHqgUVcdYoX4g4GUXoyfiOdZ/sPVlXFFoSNiFQtI6ieVakhzujwEc0X/CcYP8Yvn4BFxcCxS/7tNbD8Fk5APYweCIcqGZGxwnQLFAp0BMmDmc0lpZflGlryHs52Ev5/o477KZcifLNIzpcEdlD+Y7PwZoS//pVGnwWsB9PZW0TUJsbR1glFcrmqtfBnpuwvKiFwOyfkw3Ukj4gDY7FGFHwbPCCjHcveOrspg/DmF6hs8cYyfbIGSgXjtrlQq7ZtSSbhcdc4Jl2A7ISArihFI2AhIHIGNVtKCpxLxEkbZ5ittT++/1RdD9L0uSfEY0R3EGixbvShq8NrBFFrkTTUnBaPOsOdsQxK/HshIbk2G8lmltsgbiG05hiYSwrJeDYgsXnwrT2rlxMGSPtD9aRqy4QdD73ia7WTHvbRCXVlIr/9gC3JRAcgewl00zZMAYwC8GxBwznd/9HrdVQMEEA1wSvxuYS36kN15TqZghx4GMhmmqaF3I=\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://core-api-qa.mdapps-staging.com/api/DebitCard/Issuance",
+                    "protocol": "https",
+                    "host": [
+                        "core-api-qa",
+                        "mdapps-staging",
+                        "com"
+                    ],
+                    "path": [
+                        "api",
+                        "DebitCard",
+                        "Issuance"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "/GenerateAtmCode",
+            "id": "39c9f90f-acea-4bcb-bc2e-8b0c1c28059e",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "O9JJl8XRFx6JRjBhYEI7hxXlabC_5_MtNgSDomPgQjIGrszRwQeefC4d0toRe9qqmKnD6TTjsc1fnE5ZIBIbv_kem8htRTUBWvuzH50j9X6s8LZ5g7Txtq0QX7gtK15vrHZBlwj0amkicJE4RjBsrG0ro4vKoEpdN_MCbSdWG7-470FUujh-Ypf6s9utrqM9odWgPAwHSUnPxnuxwMgysyqk7TkLCfwM_0ILJQX98lYAKgk4H_tIMfZbq3Rqyx1l7spN9WqW-KOotq19TGDZ2xii8BotAIMho66rXYzVUvkK-c5xFizUOayoJgPrWoZCvXF8AbPxshc9RLBe2C_fKuPvFh1PtbXfE08JMES-5Eo46b39tRsVHt067PNxcpIqLduOJr_Lqe9Vx9zKVt6HmHTDRQKtIIsNrcxL6-y7bVi3AwAtOflGzi9gtTx1lhLiSReCLfoqvN8iw0aAJKpb4Yj7Wwo-qHgMa2gB1bjuRibxPIInCM99ul_xhXteXYGnBfeGJjwrfNyonxCO1myCC3ZB4L4Z9DuTuGUTKpcalNqVs7od",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n   \"amount\": 10000\n}\n"
+                },
+                "url": {
+                    "raw": "https://core-api-qa.mdapps-staging.com/api/Customer/GenerateAtmCode",
+                    "protocol": "https",
+                    "host": [
+                        "core-api-qa",
+                        "mdapps-staging",
+                        "com"
+                    ],
+                    "path": [
+                        "api",
+                        "Customer",
+                        "GenerateAtmCode"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "token",
+            "id": "fdc5f364-2b39-430a-b673-58e4f2477762",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "grant_type",
+                            "value": "password",
+                            "type": "text"
+                        },
+                        {
+                            "key": "username",
+                            "value": "melisa.sandobal20222@yopmail.com",
+                            "type": "text"
+                        },
+                        {
+                            "key": "password",
+                            "value": "Password@1",
+                            "type": "text"
+                        },
+                        {
+                            "key": "recaptchaToken",
+                            "value": "03AGdBq27v9qghYC1XKtGCM86NMB_FtRH8__7hS0NI6oYpsDXPguPzgDHXQyZZgUydAx18h2xFfyCHMwERIu3oLVStPL1zIvATJ7IYsKCqFGc-SCnU5xi069GYl52VcQL4JuYfKZNOPC9Dn6k7jHC8BXFxJKBg0Fe-kcDk9hv0EwcoLr9q2xxnSqBNFBuSsRl1aGuM-XsUj3kl6QwMoS8eYIQNsoY07OFDuz8DcSmx_fNdVGi9YknWKuNmNKkCxsxy_mjQ_v-g9p5Ow1yQ5WzbHSbnG8aA618hMxLv3zcPHL88XfI5eJXXiZoKtEIi6zSTPaulrLHQanQK4yDmCoqjTaLbrxFWDgX6wxdSO0f4CbKR5Ch1jfo2nFBybhGMSzLqt-kfiWj_qr_GSPkceFMEnr-OKCFE0NT1qnZKKs9Z0DmG3CozyuNvB2OU0q2f6YEI63NX5462NFtMEdTamxwOClfAechmV9pFVA",
+                            "type": "text"
+                        },
+                        {
+                            "key": "isMobile",
+                            "value": "false",
+                            "type": "text"
+                        },
+                        {
+                            "key": "scope",
+                            "value": "all",
+                            "type": "text"
+                        },
+                        {
+                            "key": "isFromAngular",
+                            "value": "false",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "{{url}}token",
+                    "host": [
+                        "{{url}}token"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}

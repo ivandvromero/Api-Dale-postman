@@ -1,0 +1,150 @@
+{
+    "info": {
+        "_postman_id": "aad63242-635e-44e7-8883-df209ed8560d",
+        "name": "MicroServices PSE payment (APROBADO)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "ConfimrPayment",
+            "id": "97e5c69d-3cf1-4e5a-a8b8-cac50f24e70e",
+            "protocolProfileBehavior": {
+                "strictSSL": false,
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Channel",
+                        "value": "123",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "bearer dxm3NgscUHzJqitkcjFzXwYt1xiaH9DSBf6Gl385mgpXtLXAr6vbuyK3FvAGg4BMq-Am6Zf6tVXoEvTz9CKBWJ6bERkqiuq2LdsTp66YbanKOBPrq9PRAKsr4E2i7SLIqpernYx59MElcnsGam5NEbIKWvVJ7dZivMkntthDJuHwwis_UI8IwKssIHS9ab9X2JcOUon-pDbqs5NTEd9xlkk90X18rxgSHVMciRSRrMhWI5DIfLfZaK7_yCCizOl2VeL7vYhMPfxxevm6Wu6gMXIT_N2XUqLnN1POeteZCWwbX-bLY4pnoUK8lbI1ZC-7XR1TuUIT-tNeKREPIZl-APCby42oCva-Lk57eYyRkPZO8avQQ4jn7FHHIACz42JVOnnalt2uiKdrpdsxs8RgeN1uqGXhEdRG_vkasLl8NE4_1pp3CF1OPhQwc2UCX4bEM58ef6d5lbN6NO06tCbmykAyhvRBBVplOvVuOCecFhrThGcn8fR--fck4tpaL2E6r5QgL_1QHWmcuBzQ7HYn7z7DlJMxGTz5irZwfV4g3AQp5Kbs",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"TrazibilityCode\": \"123\",\r\n    \"ServiceCode\": \"00010097\",\r\n    \"IpAddress\":\"192.168.0.20\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://public-api-qa.mdapps-staging.com/api/PseAuthorizer/PostConfirmPayment",
+                    "protocol": "https",
+                    "host": [
+                        "public-api-qa",
+                        "mdapps-staging",
+                        "com"
+                    ],
+                    "path": [
+                        "api",
+                        "PseAuthorizer",
+                        "PostConfirmPayment"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "New Request",
+            "id": "e91cd797-71f3-48b9-8312-91e03e2bf1e4",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "api/PseAuthorizer/PaymentAuthorize",
+            "id": "cfaaa265-6482-4f30-ae4c-d700aeb847bd",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                    "raw": "{{url}}api/PseAuthorizer/PaymentAuthorize",
+                    "host": [
+                        "{{url}}api"
+                    ],
+                    "path": [
+                        "PseAuthorizer",
+                        "PaymentAuthorize"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "api/PseAuthorizer/ReversePaymentAuthorize",
+            "id": "dd18f2fc-7db2-4a96-9cd5-06d77edf4808",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                    "raw": "{{url}}api/PseAuthorizer/ReversePaymentAuthorize",
+                    "host": [
+                        "{{url}}api"
+                    ],
+                    "path": [
+                        "PseAuthorizer",
+                        "ReversePaymentAuthorize"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "27fc9d5a-bea7-40fd-a35f-a27385e36fe6",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "00bc58f4-b9b0-47f0-821c-1dded4318506",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ]
+}
