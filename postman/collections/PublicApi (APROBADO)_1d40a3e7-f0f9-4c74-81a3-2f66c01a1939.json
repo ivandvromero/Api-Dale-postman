@@ -1,0 +1,511 @@
+{
+    "info": {
+        "_postman_id": "19975f62-5521-4abf-935b-f672130f6ad8",
+        "name": "PublicApi (APROBADO)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "TransfiYa",
+            "item": [
+                {
+                    "name": "PostBalance",
+                    "id": "7d1f64d5-c5cb-4156-9395-43980130feaa",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "description": "parametros, body que hace y paraque sirve"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Pasar plata",
+                    "id": "8ae2e732-ce91-4ae8-a386-4346bb73023c",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"phoneTarget\": \"3600023616\",\r\n    \"amount\": 1000,\r\n    \"description\": \"pruebas\",\r\n    \"versionApi\": \"v1\",\r\n    \"deviceFingerprint\": {\r\n        \"hash\": \"12a6e7c4d43337de0bbd13eef9554c5d67c67dc3e5165cab4e2bdd63e8356754\",\r\n        \"ipAddress\": \"195.235.197.130\",\r\n        \"geolocation\": \" \",\r\n        \"country\": \"Colombia\",\r\n        \"city\": \"Facatativa\",\r\n        \"mobileDevice\": \" \",\r\n        \"simCardId\": \" \",\r\n        \"model\": \" \",\r\n        \"operator\": \"Colombia telecomunicaciones\"\r\n    }\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}api/transfers/transaction",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "transfers",
+                                "transaction"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "969a6054-177b-4c10-bc28-d793d8aef2aa",
+            "description": "TransfiYa es un servicio utilizado con ATH y ACH para hacer transacciones con cualquier banco"
+        },
+        {
+            "name": "Enrolamiento",
+            "item": [
+                {
+                    "name": "Paso 1",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "a6d55234-7fe4-4774-b6d5-10b06ff7bcb6",
+                                "exec": [
+                                    "var data = JSON.parse(responseBody);\r",
+                                    "console.log(data);\r",
+                                    "if (typeof data.id !== 'undefined') {\r",
+                                    "    console.log(\"Step 1, id:\"+data.id+\" status:\"+data.isSuccess);\r",
+                                    "    pm.environment.set(\"enrollId\", data.id);\r",
+                                    "    console.log(pm.environment.get(\"enrollId\"));\r",
+                                    "    pm.test(\"Status test\", function () {\r",
+                                    "        pm.response.to.have.status(200);\r",
+                                    "    });\r",
+                                    "}else{\r",
+                                    "    console.log(data.message);\r",
+                                    "    pm.test(\"Access Denied\", function () {\r",
+                                    "        pm.response.to.have.status(403);\r",
+                                    "    });\r",
+                                    "}"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "bc264255-3d62-49b8-a761-7c77590459ce",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-Client-Request-Origin",
+                                "value": "AWS/ApiGateway",
+                                "type": "text",
+                                "disabled": true
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"RecaptchaToken\":\"03AGdBq24Q7m54kRd3mQBv2Bc5jRu5TGQvqrx1ChnUoHXULlHZVQMfVLQ8X4NnpWSJsGXQFjJJtLOmtzz_2EBN3QSbSH6u8kKXBEQ7oQRq-Unx2ur5RqS_DtCY-8rDn4FpMJFMR-1lh5CORjJraHxzF-YRAf9J1zxHZnla7i7UhA0hMMnAAHCSBImPO7EzwMbJfG4XgFsU0D7WYR14f3DLp3EnODgtrlLrGxPyuxDA5FnhTJJjk1sEStGqWb4q40uwwzlxmuBbju8UVwCTJMUTRgcv8LZqfleqK1WpwUEWzzlYkMj3wvQWSKiZVPb12Hyjg2newkcjrWAoJ2y2u1t_5oKEDwMMUkoruG4EM8DIYeh981eofurFa3O91jSuP2-8JgcDicsmRZGt_A07BN28EbRhzR-sJ_4lZJEd1_77KtdmjRucGMYiWajZx5o_jAwT9sqJfELylfURbHqIdtKlZWVcJ6Y-EuxsLQ\",\r\n    \"Step\": 1,\r\n    \"CustomerDTO\": {\r\n        \"FirstName\": \"Ivan\",\r\n        \"LastName\": \"Del valle\",\r\n        \"IpAddress\":\"181.54.148.82\",\r\n        \"CityId\": 1,\r\n        \"TermsAndConditionsAccepted\": true,\r\n        \"DataManagementAccepted\": true\r\n    }\r\n}"
+                        },
+                        "url": {
+                            "raw": "https://app-qa.mdapps-staging.com/api/Enrollment/UserRegistration",
+                            "protocol": "https",
+                            "host": [
+                                "app-qa",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "api",
+                                "Enrollment",
+                                "UserRegistration"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "42df3d6e-6686-4457-8211-4d127f78f37a",
+                            "name": "415",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "https://app-qa.mdapps-staging.com/api/Enrollment/UserRegistration?Content-Type=application/json",
+                                    "protocol": "https",
+                                    "host": [
+                                        "app-qa",
+                                        "mdapps-staging",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "Enrollment",
+                                        "UserRegistration"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "X-Client-Request-Origin",
+                                            "value": "AWS/ApiGateway",
+                                            "disabled": true
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "Unsupported Media Type",
+                            "code": 415,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Thu, 17 Feb 2022 19:44:11 GMT"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/problem+json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Set-Cookie",
+                                    "value": "AWSALB=YaUUVbgGgky0zNRXjtWZ3lDk98DDBOXDUBHGzBNSZ+4SRB1geK4EAVlgfkw+r2M2oLjFqmAe0yPSmubVMl5a2xULba57l+AE58eUseC9R9Li2CGnxfSboIlx4sZj; Expires=Thu, 24 Feb 2022 19:44:11 GMT; Path=/"
+                                },
+                                {
+                                    "key": "Set-Cookie",
+                                    "value": "AWSALBCORS=YaUUVbgGgky0zNRXjtWZ3lDk98DDBOXDUBHGzBNSZ+4SRB1geK4EAVlgfkw+r2M2oLjFqmAe0yPSmubVMl5a2xULba57l+AE58eUseC9R9Li2CGnxfSboIlx4sZj; Expires=Thu, 24 Feb 2022 19:44:11 GMT; Path=/; SameSite=None; Secure"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Microsoft-IIS/10.0"
+                                },
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "ASP.NET"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.13\",\n    \"title\": \"Unsupported Media Type\",\n    \"status\": 415,\n    \"traceId\": \"|99ed3ab1-4c92b0c0b59e2a98.\"\n}"
+                        },
+                        {
+                            "id": "78cc1229-3314-43b9-b951-2addfd7ed344",
+                            "name": "400",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "https://app-qa.mdapps-staging.com/api/Enrollment/UserRegistration",
+                                    "protocol": "https",
+                                    "host": [
+                                        "app-qa",
+                                        "mdapps-staging",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "Enrollment",
+                                        "UserRegistration"
+                                    ]
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Date",
+                                    "value": "Thu, 17 Feb 2022 19:45:18 GMT"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/problem+json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Set-Cookie",
+                                    "value": "AWSALB=EGNyMAYElPx6LpRgWd5IyL90pwUmtkzetwSChQ11vOWbIgTgZnaoDiVN3pMugtXafvgDKwl7m67aL0E+waEpqNaM4N81+PnuGmhkbVWKSL+FzuFNdmwl+YIZLB0N; Expires=Thu, 24 Feb 2022 19:45:18 GMT; Path=/"
+                                },
+                                {
+                                    "key": "Set-Cookie",
+                                    "value": "AWSALBCORS=EGNyMAYElPx6LpRgWd5IyL90pwUmtkzetwSChQ11vOWbIgTgZnaoDiVN3pMugtXafvgDKwl7m67aL0E+waEpqNaM4N81+PnuGmhkbVWKSL+FzuFNdmwl+YIZLB0N; Expires=Thu, 24 Feb 2022 19:45:18 GMT; Path=/; SameSite=None; Secure"
+                                },
+                                {
+                                    "key": "Server",
+                                    "value": "Microsoft-IIS/10.0"
+                                },
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "ASP.NET"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"traceId\": \"|99ed3ac2-4c92b0c0b59e2a98.\",\n    \"errors\": {\n        \"\": [\n            \"A non-empty request body is required.\"\n        ]\n    }\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "cc89049c-c725-4dd9-b085-3af6267c0c92"
+        },
+        {
+            "name": "Token K7 Copy",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "e989dc74-0775-485a-9ba2-5b8be35e1f54",
+                        "exec": [
+                            "var jsonData = JSON.parse(responseBody);\r",
+                            "postman.setEnvironmentVariable(\"TOKEN_K7\", jsonData.access_token);"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "98f28500-7244-4ef6-b135-1d963bc58827",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "type": "text",
+                        "value": "application/x-www-form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "username",
+                            "value": "melisa.sandobal20222@yopmail.com",
+                            "type": "text"
+                        },
+                        {
+                            "key": "password",
+                            "value": "Password@1",
+                            "type": "text"
+                        },
+                        {
+                            "key": "grant_type",
+                            "value": "password",
+                            "type": "text"
+                        },
+                        {
+                            "key": "RefreshToken",
+                            "value": "",
+                            "type": "default"
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "{{url}}/api/account/Token",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "account",
+                        "Token"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Token Copy",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "643d597b-e484-4eb9-95db-96f2ecc527ee",
+                        "exec": [
+                            "var jsonData = JSON.parse(responseBody);\r",
+                            "postman.setEnvironmentVariable(\"TOKEN_K7\", jsonData.access_token);"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "7eb77493-ce86-445e-97c4-c4554c61e7ad",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n   \"userName\": \"melisa.sandobal20222@yopmail.com\",\r\n   \"password\": \"Password@1\",\r\n   \"granttype\": \"password\",\r\n   \"userSession\" :\r\n   {\r\n       \"isMobile\" :  true,\r\n        \"browserName\" : \"DEMO\",\r\n        \"deviceName\" : \"DEMO\",\r\n        \"platform\" : \"demo\",\r\n       \"ipAddress\" : \"190.144.253.170\"\r\n   }\r\n}"
+                },
+                "url": {
+                    "raw": "{{url}}/api/account/Token",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "account",
+                        "Token"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Login",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "895f9da9-5b3f-4479-a904-fdb6d4aa8ef6",
+                        "exec": [
+                            "var jsonData = JSON.parse(responseBody);\r",
+                            "postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "825dfd43-162d-4fb7-913c-7cc0ebc2a26c",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n   \"userName\": \"melisa.sandobal20222@yopmail.com\",\r\n   \"password\": \"Password@1\",\r\n   \"granttype\": \"password\",\r\n   \"EmailCiphered\":\"PAq8rK5513XhMzx/a+i0NoxX0IDHSB+0zd3YbwqNKYFBIudpYy5AYO03CwisRcEprep1rh5gaPiXPCzxddy4/jOJDRckmOgFadS/51Tv4cgx84IY7uamJkVWykI0Til425TG7Demn0PL/OoNI11vsTmHj3Sie1x0VL4X5Fqq8XJduVLQiw23xbGTDHJkCOEjGn8vzIqex5bMmshl5Lb/RoqOlijveM1RUDeqO5QiWgD79O7/9ob9MkG3LzSHdwRS3vXjvISfKMzNlkkjP1Go/8eZT6TGVV1K4/RZw73isyBSHAT3U4v8aPHpErtTHdNRrNH4tW5BV2qQho5OUHMp08iaUNR693l7hKjVRQra37x5eUNREaexZZsuexs32aE7/FrikMeWwnXp9376wuubkccESf/5TMiLna44qb3aIH7JRPqfz8lfeXUvm5l+oXJOhLhsj4QTHlO9RGIN5voWTPzQtZsp7Jan4e8Qv20KY6A1n2CiCMy/RDTZYa3uCjHVC2IMPhvymwwLG5Y2ukouFmYD0n5PgGD4UFjQy5ATtlK3nQ+cOV9ZjITvKpGGUUaVQRUaoV7KpWMJrBhstGeT435N3XC5k7IoKpKwWkKjpb7oF0NBzj8gRbI9uzHiKO0iELvlNg6nLG7P27CTVrlo0/libVa5qVpfooWXv+m4d24=\",\r\n   \"PasswordCiphered\":\"ABemHYK26QcfKyYrFsEToysI2ekLItYuaYKDtWq5gkTkQvqw+o5qBdmMhxkKfzyFLQSreS8bg9l41esw9B/763bmRd8HI8/X4a4ID36du+ozRwVPYUqVhdH+WGPAiPlXAvY+6OwvejjHWLplolT9s/2FreTGAJrJKQBlY5HjeXTr6yiIh6yDjzgOsdYFpKGcDqVX6evd79iSrBo5sPWMzQFXkTN9MbCf37gsuV7foysWstuI9Z8QCVxzkCJVoNYiwSqIHfS9M4fJr+E1G0onuw6MbxHlD0eUdy3NYvIM3K9Iobj6ekfwfp2o6PbDtaU8yLkJW8k+M6GsBHaWFY8VGFhNyz/AoV9ponvO8xbQRRPbz8WzTrPQsfqCV5xIsd647Bb4xuqI6As1mVWBM8ffaMmzKB1v7qVdC/jtSPaxR9hMK/ATtZQjmDhpsA5RlBemPnP4Tvg0imkowREVNtDm001Qeaje67LbJgmjqB9/Axaj0vcW2h7LJhMgqIVwtGQAFQb0ejBVhDPGFMpTSVSW87QIH9q+Tdhju8e+aeH+8W3AJ47rQ5iieV0Xfhv15fE+0PFTgH19jTXcT2WVWrpBRpnY0ChU22eQKoBYQ6hDkMQYgYZLoDzKtvgxnowoXx7oDSYYN+TZEJnXSZeNr+RBHiy2fFY3AMXYkkYPtRXNLcc=\",\r\n   \"recaptchaToken\":\"{{RecaptchaToken}}\",\r\n   \"userSession\" :\r\n   {\r\n        \"isMobile\" :  true,\r\n        \"browserName\" : \"DEMO\",\r\n        \"deviceName\" : \"DEMO\",\r\n        \"platform\" : \"demo\",\r\n        \"ipAddress\" : \"190.144.253.170\"\r\n   }\r\n}"
+                },
+                "url": {
+                    "raw": "{{url}}/api/account/Login",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "account",
+                        "Login"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get City",
+            "id": "57d207ac-913d-4583-94f8-fa0811826956",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{url}}api/city/GetCities",
+                    "host": [
+                        "{{url}}api"
+                    ],
+                    "path": [
+                        "city",
+                        "GetCities"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Send Reset Pass",
+            "id": "c947a557-51f5-4c84-8462-1db44134b383",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true,
+                "disabledSystemHeaders": {
+                    "accept": true
+                }
+            },
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "content-type",
+                        "value": "application/json",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "application/json, text/plain, */*",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n  \"email\": \"1y73oj9@1daegcj.com\",\r\n  \"emailCiphered\": \"K2U6eMWH+ASG5AkfjKBB5ztPYUn5vi5s+r5FJ66JW4nlHKkvQ8e6zSVSM5idxyW8mC2Tqtbxj/oBlPvgYnKlROwUe6d3ElorXfDdwQy9+zc/+Rnwt/dTmboV6KLKdICR+h7F3uE5vEmMdBnj6KQfIObfuxNZUS6gimqYH5XvPVlgIkOwRvUng4iZqCWVm38dy3QIcag/8AfVXPczXfmASFgE1TJrGXLq7+4+/7zgJxUdS5Zy27EnKey9OrsS3P4bgDSxYScZT00M3qawQdySyVA+U8Ndoib4cOykaXEpgnGTubjdBkiyvKddhXR1xCafqzFdWZk2VLDsRqYWc1xuTxynqtiQCt9HxIMsfVxYq60MSDJrpjeZI26bdQVGSHeX8dbhWMaWMjU20Lib+mO0e1+8R5yOAMkYzz5KSKcufz9KG/xag7PpHn8/JYa2jMk7VRsOMh5KVwRCdcQO9a4TtfG9MF5GmKF5LiZMYLAUqVXAREMkZ40oNBsTc89t/CCt/90wAwHMug1XsOI19YnsXb7nRvu9YO+BtpmOqjNGNjsEd0hdqQJnLjxT5Hwf0G4WrtfQIckA7w6GISylbayT143XtA0ZZnlREZieOKOBzO9UqqDBz9mQPvhY3TXGyDO4AHfVQuF9gxQDowJdCgQN59LtUbQWJVwZJhp7YL5aIbE=\"\r\n}"
+                },
+                "url": {
+                    "raw": "{{url}}/api/account/ForgotPassword",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "account",
+                        "ForgotPassword"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}

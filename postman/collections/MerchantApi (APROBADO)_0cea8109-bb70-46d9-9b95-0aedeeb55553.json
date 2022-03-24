@@ -1,0 +1,869 @@
+{
+    "info": {
+        "_postman_id": "30d7a896-7b16-4adb-832e-aa3dc1ec2785",
+        "name": "MerchantApi (APROBADO)",
+        "description": "1\\. create (necesita token )\n\n2\\. Confirmar (no necesita token )\n\n3\\. Execute (necesita token )\n\nconsultar Get payment token {payment id}\n\n`1) Api de autenticación para obtener un bearer token (se requiere el client_id, client_secret y el grant_type.)   2) IniciarPago /payments/create (se debe suministrar el identificador de la transacción y el número de producto con el cual se ejecuta el pago) (se debe simular pagos inferiores al limite permitido para evitar que se genere validación por codigo de verificación).   3) Ejecutar un Pago /payments/execute (requiere content-type, authorization, payment_id, Payer_id )   4) Consultar un pago por token /payments/getPaymentByToken/{paymentid} (requiere content-type authorization)   5) Consultar todos los pagos de un comercio /payments?offset=1&limit=1 (requiere content-type authorization)   6) Reversar un Pago /payments/reverse (requiere content-type authorization)   7) Retractar un Pago /payments/retract (requiere content-type authorization)   8) Consultar registros de Retracto /getRetractRecords?retractId=123-548-976 (requiere content-type authorization)`",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Transfers",
+            "item": [
+                {
+                    "name": "Transfers",
+                    "id": "fad940ad-3b49-47c9-8b44-d7699fd4b492",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{URL}}/transfers",
+                            "host": [
+                                "{{URL}}"
+                            ],
+                            "path": [
+                                "transfers"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Transfers",
+                    "id": "ce9b0d7a-14c8-4e0c-b5f8-26b90f99fb27",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "jZ-0G2zoEfIy1xqxoyD6J6AsOCaLGuGIyPUd95kOLE9gWTT2rzzcu1fTOFjrCklqpzIH99ubmKDTLJlpMQenjYRyCPB90sKrtCqqqtrMvTZ6GepbTMkl2Do2KqZ0sS3vnU-IjmsGbdGfDGCqeF4_qpcaxHXHqy3tVIlEU2YpyVXd5Awb5jOogDHx-uCOPndp7jxFNUGNX1B9kMX50SpD23DoQqferTE6ni9NYaKYrJDyfqBiGKdB3evdGdWQNs2sI-nxuvzbGtHUovl8Qllh9HGS2pNXI0aMyOBOKBe50lgMI1pLHbmVkDVrJvDdq1hfP6eRjw",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"merchant_id\": \"f45db2dc-8194-4b59-a56e-00fe7997e1fc\", \n  \"merchant_account_id\": \"000002184996\", \n  \"recipients\": [\n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"1030640170\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n   {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"33210989\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"6799560\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"1030640170\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n   {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"33210989\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"6799560\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n\n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"1030640170\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n   {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"33210989\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"6799560\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"1030640170\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n   {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"33210989\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"6799560\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"1030640170\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n   {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"33210989\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"6799560\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"1030640170\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n   {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"33210989\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"6799560\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n\n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"1030640170\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n   {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"33210989\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"6799560\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"1030640170\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n   {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"33210989\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n    \n    {\n      \"recipient_id_type\": \"cc\",\n      \"recipient_id\": \"6799560\", \n      \"description\": \"Pago nomina\", \n      \"amount\": 1000, \n      \"currency\": \"cop\" \n    },\n  ]\n}"
+                        },
+                        "url": {
+                            "raw": "https://merchant.mdapps-staging.com/transfers",
+                            "protocol": "https",
+                            "host": [
+                                "merchant",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "transfers"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Transfers Id",
+                    "id": "fa97b8fe-ec7f-482f-ba0d-dd0a30ac2726",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "yPYohSiVQafbih14lnvRbKV1C9hr4EuZM0GBtpPlrBaGFDGkmJJ_qejDZsh8xjDWMvhVSpWl8JA66rqqmNkQsnhgnCPU2TIkgf2MhyVmNRGfTJj9FA5LsiExJ8LwqYK2dxrzv0_1ag7ZqbGI_feaMKxrxY1GhKxILlhccIwjmVnFbqoBfBKgoyD3CloYjJHJv1qpo-RKVZzEtnSY3qaWO8n9MVbraDjU1c-J8kvOebRLNVy0Q1IFj25l9ZTycL7tsA8S295LBQgW1-KSDNTk8D08U099VhCPJ9gLIFs_itSkZ-I6fdlIKtgqR4o7xl2-fS3zSA",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://merchant.mdapps-staging.com/transfers/211",
+                            "protocol": "https",
+                            "host": [
+                                "merchant",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "transfers",
+                                "211"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Transfer",
+                    "id": "25a537fb-f412-4928-9c5d-522b1ef70ed9",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"sender_account_id\": \"000000002188\", \n  \"recipient_account_id\": \"000000022889\", \n  \"recipient_id_type\": \"CC\",\n  \"recipient_id\": \"1030840170\", \n  \"description\": \"Pago nómina\",\n  \"amount\": 1000, \n  \"currency\": \"cop\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{URL}}/transfers/transfer",
+                            "host": [
+                                "{{URL}}"
+                            ],
+                            "path": [
+                                "transfers",
+                                "transfer"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "dd5cb547-4fb7-4766-ad24-f1beb508ba9c"
+        },
+        {
+            "name": "User",
+            "item": [
+                {
+                    "name": "User",
+                    "id": "7a441ff9-daa8-4c7a-99ad-73dda5f8b608",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "2OVe6WEKF0P4kHYschrGbw0gdxU0w2QzpOfMfNPbvaAKaP46lypCmdXLYjTILbO7zGn0qlRcvyT4tBIWP_Hmz4GfIyLoJJAb8dH3zMu-hRPD60dAL0N1X1AtSWWPmiSyoqeDHQzsy30rBoaPb1lXUwcU2tkEpNc6LmoBKK8tzfYQ7CbvAZR36DCjtzA1ZsuhO7yjEr_9-9hU_ne8l1qXFEeaJK3WWHLGC0JWy3u3Z77_2aBGAdOGCoLd8cZcD824i67_Z-u7cqvYhFN0yoTbXfnYMdU4cOt4YEpn_H2bFZf0dNSA",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://merchant.mdapps-staging.com/me",
+                            "protocol": "https",
+                            "host": [
+                                "merchant",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "me"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "9d6e3c89-a62e-40c6-a510-f76d7c1875bb"
+        },
+        {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Auth/token",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "var data = JSON.parse(responseBody);",
+                                    "postman.setEnvironmentVariable(\"accessToken\", data.access_token);"
+                                ],
+                                "type": "text/javascript",
+                                "id": "349f4f94-9747-4337-bca0-8e93b04b8d99"
+                            }
+                        }
+                    ],
+                    "id": "79da1d38-3e78-497a-878a-d10fe427402f",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"client_id\": \"e4ec079b-752a-4bce-8686-e772b80ef890\",\n  \"client_secret\": \"pj6bw8PJIQClnTGq4qHfKt6a70YZc2jNFkdW3pZjrG6NqR/fsDKNqp0KezZKz/EaHFjevhK7YkTredszKhaoYHcrqZ1WujwCWhasYN1DXQpprzbES5b3V/rEuZx/QGWaZJKkJ89Y/iKEeg2t2b1n/J4cI3yxbjpN0Yauj/rFk9MTgelbr+z3N4XtWqbFEQtZbf6dtiLw2ccGbGHj0S1IqYDrXY01QRv//X0N/5h7gcC+0eqi5l909VtDbmbUCeQ5SnfT6uhJKwXLtD3SvtVQrj7mCS/wUfg7rqGxznA7IkUhS3k+hHN7n80pSddjc+5Ubmkn3SDQtzd8c+hPDNTZDw==\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://merchant-qa.mdapps-staging.com/api/auth/token",
+                            "protocol": "https",
+                            "host": [
+                                "merchant-qa",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "api",
+                                "auth",
+                                "token"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Token",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "var jsonData = JSON.parse(responseBody);",
+                                    "postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
+                                ],
+                                "type": "text/javascript",
+                                "id": "0a7ee32e-2ee2-4df1-a9b2-ff6c7c644893"
+                            }
+                        }
+                    ],
+                    "id": "e4ebbf7c-fbf2-45ba-85d6-f9feff75f972",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "username",
+                                    "value": "jimena.olarte21@yopmail.com",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "Password@1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "grant_type",
+                                    "value": "password",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "scope",
+                                    "value": "all",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "https://app.mdapps-staging.com/token",
+                            "protocol": "https",
+                            "host": [
+                                "app",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "token"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "c74fc4b2-8127-410e-9954-521fdcd603fa"
+        },
+        {
+            "name": "Payment",
+            "item": [
+                {
+                    "name": "Payments/Create",
+                    "id": "871cba88-a07d-4993-bc05-ea73bff2e35b",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "CxpuVsrFvbAnh_5M99VzyQpbCJTCybgc5lntuRE9-DceaDQg4gAkdKjw0Y8CtfxGBjPIsNunDs1zX2Hue3qAyvNcsQJekohV2HxhYaQ1CuhG2edQa8KzDMWJRjLgzB60jUlMrJl0vTVx9Ukag0Xc9COe64Azq0CjeIZZM62TgP2LNOHagdtZ4G60Uvx_s5anw5Nl21bHFK5qCGRIQJhyFpww60dPyUvpP8aX3AyX2ZwRu0buKK6kvtyQDQVANc2mmzU0wypCUXKwzAEIBeClNXUB8MLrO8rLow3DeGZyji5OTqXuh00KsDWCa-2rlpcWhuCmTw",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"merchant_id\": \"843af27b-e4c6-49be-9101-cf58ff8d7799\",\n  \"reference\": \"987654671\",\n  \"invoice_number\": \"REF0003\",\n  \"description\": \"Pruebas de Mckensey #1\",\n  \"subtotal\": 2000,\n  \"tax\": 0,\n  \"total\": 2000,\n  \"currency\": \"COP\",\n  \"redirect_urls\": {\n    \"confirm_url\": \"https://www.koaj.co/\",\n    \n    \"cancel_url\": \"https://permoda.freshdesk.com/support/home\",\n    \n    \"return_url\": \"https://www.koaj.co/inicio-sesion?login\"\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "https://merchant-qa.mdapps-staging.com/payments/create",
+                            "protocol": "https",
+                            "host": [
+                                "merchant-qa",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "payments",
+                                "create"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GetpaymentByToken/{paymentId}",
+                    "id": "df71b28e-b1b9-465f-9571-951dbe781fe9",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "4q33yvhRqOnFwBX9i2v3XBdmmz95AWzmWQdVVdZd0pnW8Alg4LN90GFwA54UFNqwJIX_G-uHbFGr9aZm-5E6JWjaGoOh-dI-GKpn3PDVZOtBTD4_KtS3cBn1Q32GVVmn9tQhRfZUVh_3h4CnNOQvDqWkXqdSkppQBKHSjLPdDFAb7g9oL6HVSdPcK5OSSNc1ad-bDudXMSg5b42Pn1pl6YT3D7lj-yYpJ3S9eYNmrhRYpPbcu5LzXaqzajHP0Lcqjxj_g-ULSeGx5uUTc_cX7GDFDNM_Mtfa-Vm6TSL7bex23ovwzKhpec_30DVWAqemuZwY5Q",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://merchant.mdapps-staging.com/payments/getpaymentbytoken/ZqUbmx22Sh55Xa9E46EN",
+                            "protocol": "https",
+                            "host": [
+                                "merchant",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "payments",
+                                "getpaymentbytoken",
+                                "ZqUbmx22Sh55Xa9E46EN"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Payments/Execute",
+                    "id": "9269591a-aab2-41f3-b602-9464c6042e3d",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "XC9dXMEfgh2KUNMDmepvc6Dh2QNC4Tg9baHitpTZU7zIG2-Krg8vI41A1zKzuhVCBioFEDU-SAf9asUSvBmUaWJxtJYL_AvAeJwTzdm4Wg5Ypa7owW8rmGlh3mT8GTxYfkaigUbXQg0MxAjrhG3V6XywE2q6eaowCMZQbmwekneRTmKwS7m2bfUk3zpE31cACyQgetbnPH6wlIHaM9qsO0FbzQQUSuyzST-cGxl75dp4tRWQv7BNY7YJbuLkl_3OFDXhiJe_Xmh_ijzt4VqDCZq2ovfSN_kac-Lc6EYT42tew5kf",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"payment_id\": \"sAsx9Z6awtnZXGx3iJCI\",\n  \"account_id\": \"h93ORJcuBDuTYByzFC93\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://merchant-qa.mdapps-staging.com/payments/execute",
+                            "protocol": "https",
+                            "host": [
+                                "merchant-qa",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "payments",
+                                "execute"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Payments/Confirm",
+                    "id": "273d45d7-d52e-4689-90f8-e76ef7224092",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"paymentId\": \"sAsx9Z6awtnZXGx3iJCI\",\n  \"alternativeAccountId\": \"h93ORJcuBDuTYByzFC93\",\n  \"ipAddress\":\"127.0.0.1\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://core-api-qa.mdapps-staging.com/api/paymentButton/ConfirmPayment",
+                            "protocol": "https",
+                            "host": [
+                                "core-api-qa",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "api",
+                                "paymentButton",
+                                "ConfirmPayment"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "{{URL}}/payments/reverse",
+                    "id": "32261ee0-fd20-455b-b41f-d39ef4e24f75",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"payment_id\": \"q2ldyQrUVnez6nqWbFgp\",\n  \"account_id\": \"BgegmEEubqUJ38GXdsRn\",\n  \"description\": \"Reverso debido a reclamo\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{URL}}/payments/reverse",
+                            "host": [
+                                "{{URL}}"
+                            ],
+                            "path": [
+                                "payments",
+                                "reverse"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Payments/reverse",
+                    "id": "427cf90c-62c6-4b6b-b9ea-78fd8158cc01",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "ECcp3UEW_XIwnWbgrJvXbZWl2wFG99hOxMOqVMC4ADyVPPExtEwwgzjHWOxwX0aChFrPpHR1faXnDw0y_qMyF7nyuodr5AsKq_Eu-2VYJw__HtUzqTkRRFci-bq2lZgSAcxXeT1v0ns3PYg_edQXqdzxOS8HenFUJtwHefR7rcaxdd9EOVKfaqO8MV05-PLs4MqsZ6Culz-8rngN47nfnCCMijRLR0AXSq38AbD1CHvh5w80LHeVG5YjVHlsMKSiHObjf2Ez4x83Cz9FKCt809dZeulgsMg4ROV03nByej_ARcEF",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"payment_id\": \"sZJSr9Mhyz0odSAng4cm\",\n  \"account_id\": \"pYHbIAcxKi77W2lpotFF\",\n  \"description\": \"Refund test\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://merchant.mdapps-staging.com/payments/reverse",
+                            "protocol": "https",
+                            "host": [
+                                "merchant",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "payments",
+                                "reverse"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Addfund/Creditcard",
+                    "id": "74353491-11a4-4c04-a631-53be52a02eb3",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n  \"merchant_id\": \"a962f42c-6890-4bf5-bcb6-d12317c08f11\",\r\n  \"account_id\": \"00000000002\",\r\n  \"card_number\": \"4567432109896754\",\r\n  \"amount\": 2000,\r\n  \"cvv\": 888,\r\n  \"number_of_installments\": 1\r\n}"
+                        },
+                        "url": {
+                            "raw": "{{URL}}/addfund/creditcard",
+                            "host": [
+                                "{{URL}}"
+                            ],
+                            "path": [
+                                "addfund",
+                                "creditcard"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Payments/Retract",
+                    "id": "c409e4a2-2744-4c40-bb11-add69a6e7e15",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[\n  {\n    \"payment_id\": \"fsqOoyhRug8pufVNsFZw\",\n    \"account_id\": \"pYHbIAcxKi77W2lpotFF\",\n    \"description\": \"Retract Test\"\n  }\n]",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "https://merchant.mdapps-staging.com/payments/retract",
+                            "protocol": "https",
+                            "host": [
+                                "merchant",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "payments",
+                                "retract"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GetRetractRecords",
+                    "id": "b0e9e2e5-3162-4d82-a5ef-f7acbf5e9773",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://merchant.mdapps-staging.com/payments/getRetractRecords?retractId=34",
+                            "protocol": "https",
+                            "host": [
+                                "merchant",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "payments",
+                                "getRetractRecords"
+                            ],
+                            "query": [
+                                {
+                                    "key": "retractId",
+                                    "value": "34"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PaymentValidations",
+                    "id": "b30327ea-8720-4565-bd6a-73a6b6b42f8c",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "5ww0-uw5Eqv_XaLQy9rGMxz1GFpRw_lIo7EV9aGBvu6G1j-VEoZd0xZI0uDSloby6TR09Bh8Wv8aw7ubMb6gMlbvoDHognMqirqf-rwy8djDV9zJTRwpXcS2wAaur2OZ7WL8fxlJsaVKutle0GqiwxckNq7OmZUXln7-FScm1eR2p8zy4FTWQfqm02MzOx7aZAmSpYVsx-sKqe-uIted3VhnEfu9g3iFxKhcLw15eQCxUR4njInLcwsUh7ZovoCxYPSBxAmVLzPUaz9iQHfdM2qfMkdeYh4AdI2DRteXf9OtgorbzRRo6i20ZOj0hsqlISgzFA",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"account_id\": \"j5BgYjZtdA7nenpsAUPj\",\n  \"amount\": 7268208.00\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "https://merchant.mdapps-staging.com/payments/paymentValidations",
+                            "protocol": "https",
+                            "host": [
+                                "merchant",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "payments",
+                                "paymentValidations"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Payments/reverses",
+                    "id": "57b99aa3-bc89-4e11-88f8-ff2c13f79cb2",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[\n  {\n    \"payment_id\": \"wIIGgNKgu27pfwI3HI4I\",\n    \"account_id\": \"TptBWVHZx7X3DfbP4XRP\",\n    \"description\": \"Test-Success\"\n  }\n]",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "https://merchant.mdapps-staging.com/payments/reverses",
+                            "protocol": "https",
+                            "host": [
+                                "merchant",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "payments",
+                                "reverses"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "MerchantReversePaymentDetail",
+                    "id": "f9cdef52-3a05-4b75-b6ec-46639c2765d4",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://merchant.mdapps-staging.com/payments/MerchantReversePaymentDetail?reversePaymentId=55",
+                            "protocol": "https",
+                            "host": [
+                                "merchant",
+                                "mdapps-staging",
+                                "com"
+                            ],
+                            "path": [
+                                "payments",
+                                "MerchantReversePaymentDetail"
+                            ],
+                            "query": [
+                                {
+                                    "key": "reversePaymentId",
+                                    "value": "55"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "b192d30b-fc67-40e2-baea-986563a74f7a"
+        }
+    ]
+}
