@@ -188,7 +188,7 @@
                             "bearer": [
                                 {
                                     "key": "token",
-                                    "value": "2OVe6WEKF0P4kHYschrGbw0gdxU0w2QzpOfMfNPbvaAKaP46lypCmdXLYjTILbO7zGn0qlRcvyT4tBIWP_Hmz4GfIyLoJJAb8dH3zMu-hRPD60dAL0N1X1AtSWWPmiSyoqeDHQzsy30rBoaPb1lXUwcU2tkEpNc6LmoBKK8tzfYQ7CbvAZR36DCjtzA1ZsuhO7yjEr_9-9hU_ne8l1qXFEeaJK3WWHLGC0JWy3u3Z77_2aBGAdOGCoLd8cZcD824i67_Z-u7cqvYhFN0yoTbXfnYMdU4cOt4YEpn_H2bFZf0dNSA",
+                                    "value": "uaUcdG7JjFvE0pDNI_vuTzgY_zLDZUWUQHto5nshvR3KmetUA1gGyGF99pSE0b8fyNVMxMNaPrNrM1-a6Wdd2_4WaMO-GUSU8r_ketCPWlTyPAdhVoCxoJzsR49UZb2Q8SCcnoMLu2wSWIryR6_6AZM5Oh7SfMz-m7yGY3OW8z7MAUNNcLkhSiLFSQhPvIxr_v0t5CZlw2jkndnJLDVOwMUFmxTvLZW6gmo-MQakemHesJjQJbsAE6jD-XhrgVYTGyXCqeTWEMBURRdMCEkiIlTluKmpSMnGOWyQbCiqvN5J8TEzjj5jkTIezXqTliS1Swh22g",
                                     "type": "string"
                                 }
                             ]
@@ -196,10 +196,10 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                            "raw": "https://merchant.mdapps-staging.com/me",
+                            "raw": "https://merchant-qa.mdapps-staging.com/me",
                             "protocol": "https",
                             "host": [
-                                "merchant",
+                                "merchant-qa",
                                 "mdapps-staging",
                                 "com"
                             ],
@@ -272,12 +272,12 @@
                         {
                             "listen": "test",
                             "script": {
+                                "id": "0a7ee32e-2ee2-4df1-a9b2-ff6c7c644893",
                                 "exec": [
                                     "var jsonData = JSON.parse(responseBody);",
                                     "postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
                                 ],
-                                "type": "text/javascript",
-                                "id": "0a7ee32e-2ee2-4df1-a9b2-ff6c7c644893"
+                                "type": "text/javascript"
                             }
                         }
                     ],
@@ -864,6 +864,34 @@
                 }
             ],
             "id": "b192d30b-fc67-40e2-baea-986563a74f7a"
+        },
+        {
+            "name": "Enrollment",
+            "item": [
+                {
+                    "name": "RegisterMerchant",
+                    "id": "7cf07f65-fccc-4bec-9cb1-5aba6c5b0836",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}api/Account/RegisterMerchant",
+                            "host": [
+                                "{{url}}api"
+                            ],
+                            "path": [
+                                "Account",
+                                "RegisterMerchant"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "6aab154b-745a-4e9b-9afa-62f94f1942d1"
         }
     ]
 }

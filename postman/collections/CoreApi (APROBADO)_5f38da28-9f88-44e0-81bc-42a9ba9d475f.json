@@ -443,6 +443,173 @@
             "id": "effdb82c-eb76-4075-a663-a30ed1376745"
         },
         {
+            "name": "TransfiYa",
+            "item": [
+                {
+                    "name": "transaction",
+                    "id": "6c0801fd-ce0b-4886-a2e7-05df27c68726",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "X-CompanyId",
+                                "value": "0097",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-NextDt",
+                                "value": "0001-01-01T00:00:00",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-GovIssueIdentType",
+                                "value": "CC",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-IdentSerialNum",
+                                "value": "1500632703",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-IPAddr",
+                                "value": "1.1.1.1",
+                                "type": "text"
+                            },
+                            {
+                                "key": "VersionApi",
+                                "value": "v1",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"UserId\": null,\r\n    \"PhoneTarget\": \"3600003160\",\r\n    \"Amount\": 1000.0,\r\n    \"Description\": \"pruebas\",\r\n    \"DeviceFingerprint\": {\r\n        \"Hash\": \"12a6e7c4d43337de0bbd13eef9554c5d67c67dc3e5165cab4e2bdd63e8356754\",\r\n        \"IpAddress\": \"90.167.51.237\",\r\n        \"Geolocation\": \" \",\r\n        \"Country\": \"Colombia\",\r\n        \"City\": \"Bogota DC\",\r\n        \"MobileDevice\": \" \",\r\n        \"SIMCardId\": \" \",\r\n        \"Model\": \" \",\r\n        \"Operator\": \"Uni2\"\r\n    },\r\n    \"VersionApi\": \"v1\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/transfers/transaction",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "transfers",
+                                "transaction"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "request",
+                    "id": "3acd7e88-ddf7-481a-99be-7fa1c60e0192",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"UserId\": null,\r\n    \"PhoneTarget\": \"3600003160\",\r\n    \"Amount\": 1000.0,\r\n    \"Description\": \"asdf\",\r\n    \"DeviceFingerprint\": {\r\n        \"Hash\": \"12a6e7c4d43337de0bbd13eef9554c5d67c67dc3e5165cab4e2bdd63e8356754\",\r\n        \"IpAddress\": \"90.167.50.96\",\r\n        \"Geolocation\": \" \",\r\n        \"Country\": \"Colombia\",\r\n        \"City\": \"Bogota DC\",\r\n        \"MobileDevice\": \" \",\r\n        \"SIMCardId\": \" \",\r\n        \"Model\": \" \",\r\n        \"Operator\": \"Uni2\"\r\n    },\r\n    \"VersionApi\": \"v1\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{api}}/api/transfers/Request",
+                            "host": [
+                                "{{api}}"
+                            ],
+                            "path": [
+                                "api",
+                                "transfers",
+                                "Request"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Por aceptar",
+                    "id": "7cc32a78-04c9-43f2-aba7-397c97bb24b5",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"UserId\":null,\"TypeQuery\":\"Debit\",\"VersionApi\":\"v1\"}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/transfers/inquiry",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "transfers",
+                                "inquiry"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "cab79149-e422-4a6c-b120-c48be437eab8"
+        },
+        {
+            "name": "Merchan",
+            "item": [
+                {
+                    "name": "Enrolamiento",
+                    "item": [
+                        {
+                            "name": "MerchantRegisterRequest",
+                            "id": "2f326a83-3faa-4593-b29b-913ae16406f4",
+                            "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                            },
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{url}}api/Account/MerchantRegisterRequest",
+                                    "host": [
+                                        "{{url}}api"
+                                    ],
+                                    "path": [
+                                        "Account",
+                                        "MerchantRegisterRequest"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        }
+                    ],
+                    "id": "c34a6c4f-4b22-4e89-b025-f47f72495377"
+                }
+            ],
+            "id": "35404dfa-3c91-4df1-be6b-91946c4ef8ea"
+        },
+        {
             "name": "/GetVirtualDataByUserId",
             "id": "6bec5c9b-b8ca-47fd-9312-62975c9b2ea3",
             "protocolProfileBehavior": {

@@ -9,19 +9,6 @@
             "name": "TransfiYa",
             "item": [
                 {
-                    "name": "PostBalance",
-                    "id": "7d1f64d5-c5cb-4156-9395-43980130feaa",
-                    "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                    },
-                    "request": {
-                        "method": "POST",
-                        "header": [],
-                        "description": "parametros, body que hace y paraque sirve"
-                    },
-                    "response": []
-                },
-                {
                     "name": "Pasar plata",
                     "id": "8ae2e732-ce91-4ae8-a386-4346bb73023c",
                     "protocolProfileBehavior": {
@@ -39,7 +26,38 @@
                             ]
                         },
                         "method": "POST",
-                        "header": [],
+                        "header": [
+                            {
+                                "key": "X-CompanyId",
+                                "value": "0097",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-NextDt",
+                                "value": "0001-01-01T00:00:00",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-GovIssueIdentType",
+                                "value": "CC",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-IdentSerialNum",
+                                "value": "1500632703",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-IPAddr",
+                                "value": "1.1.1.1",
+                                "type": "text"
+                            },
+                            {
+                                "key": "VersionApi",
+                                "value": "v1",
+                                "type": "text"
+                            }
+                        ],
                         "body": {
                             "mode": "raw",
                             "raw": "{\r\n    \"phoneTarget\": \"3600023616\",\r\n    \"amount\": 1000,\r\n    \"description\": \"pruebas\",\r\n    \"versionApi\": \"v1\",\r\n    \"deviceFingerprint\": {\r\n        \"hash\": \"12a6e7c4d43337de0bbd13eef9554c5d67c67dc3e5165cab4e2bdd63e8356754\",\r\n        \"ipAddress\": \"195.235.197.130\",\r\n        \"geolocation\": \" \",\r\n        \"country\": \"Colombia\",\r\n        \"city\": \"Facatativa\",\r\n        \"mobileDevice\": \" \",\r\n        \"simCardId\": \" \",\r\n        \"model\": \" \",\r\n        \"operator\": \"Colombia telecomunicaciones\"\r\n    }\r\n}",
@@ -50,13 +68,203 @@
                             }
                         },
                         "url": {
-                            "raw": "{{url}}api/transfers/transaction",
+                            "raw": "{{url}}/api/transfers/transaction",
                             "host": [
-                                "{{url}}api"
+                                "{{url}}"
                             ],
                             "path": [
+                                "api",
                                 "transfers",
                                 "transaction"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Cobrar Plata",
+                    "id": "c9fb5839-1b77-45b3-bf32-0bc6503c8507",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "X-CompanyId",
+                                "value": "0097",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-NextDt",
+                                "value": "0001-01-01T00:00:00",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-GovIssueIdentType",
+                                "value": "CC",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-IdentSerialNum",
+                                "value": "1500632703",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-IPAddr",
+                                "value": "1.1.1.1",
+                                "type": "text"
+                            },
+                            {
+                                "key": "VersionApi",
+                                "value": "v1",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n  \"phoneTarget\": \"3600003160\",\r\n  \"amount\": 1000,\r\n  \"description\": \"prueba cobros\",\r\n  \"versionApi\": \"v1\",\r\n  \"deviceFingerprint\": {\r\n    \"hash\": \"12a6e7c4d43337de0bbd13eef9554c5d67c67dc3e5165cab4e2bdd63e8356754\",\r\n    \"ipAddress\": \"195.235.197.130\",\r\n    \"geolocation\": \" \",\r\n    \"country\": \"Spain\",\r\n    \"city\": \"Madrid\",\r\n    \"mobileDevice\": \" \",\r\n    \"simCardId\": \" \",\r\n    \"model\": \" \",\r\n    \"operator\": \"Telefonica De Comunicaciones\"\r\n  }\r\n}\r\n",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/transfers/request",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "transfers",
+                                "request"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Por Aceptar",
+                    "id": "04f7da16-dbe9-4e08-9327-9d25b8987d58",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "X-CompanyId",
+                                "value": "0097",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-NextDt",
+                                "value": "0001-01-01T00:00:00",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-GovIssueIdentType",
+                                "value": "CC",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-IdentSerialNum",
+                                "value": "1500632703",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-IPAddr",
+                                "value": "1.1.1.1",
+                                "type": "text"
+                            },
+                            {
+                                "key": "VersionApi",
+                                "value": "v1",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n  \"typeQuery\": \"Credit\",\r\n  \"versionApi\": \"v1\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/transfers/inquiry",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "transfers",
+                                "inquiry"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Aceptar_Transferencia",
+                    "id": "e10941bc-405f-47e5-b290-2bde7b1d23ad",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "X-CompanyId",
+                                "value": "0097",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-NextDt",
+                                "value": "0001-01-01T00:00:00",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-GovIssueIdentType",
+                                "value": "CC",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-IdentSerialNum",
+                                "value": "1500632703",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X-IPAddr",
+                                "value": "1.1.1.1",
+                                "type": "text"
+                            },
+                            {
+                                "key": "VersionApi",
+                                "value": "v1",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n  \"cus\": \"QwRQBcI8ZM9z2IcFv\",\r\n  \"amount\": 1000,\r\n  \"isAccepted\": true,\r\n  \"versionApi\": \"v1\"\r\n}\r\n",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/transfers/balance\n",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "transfers",
+                                "balance\n"
                             ]
                         }
                     },
@@ -283,6 +491,163 @@
             "id": "cc89049c-c725-4dd9-b085-3af6267c0c92"
         },
         {
+            "name": "Enrolamiento merchan",
+            "item": [
+                {
+                    "name": "RegisterMerchant",
+                    "id": "4184f2d8-863e-42b3-bb17-0117a1a643af",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "CF-CONNECTING-IP",
+                                "value": "",
+                                "type": "text"
+                            },
+                            {
+                                "key": "HTTP_X_FORWARDED_FOR",
+                                "value": "",
+                                "type": "text"
+                            },
+                            {
+                                "key": "REMOTE_ADDR",
+                                "value": "18.117.68.6:443",
+                                "type": "text"
+                            },
+                            {
+                                "key": "X_FORWARDED_FOR",
+                                "value": "//:method:POST",
+                                "type": "text"
+                            },
+                            {
+                                "key": "",
+                                "value": "authority:public-api-qa.mdapps-staging.com",
+                                "type": "text",
+                                "disabled": true
+                            },
+                            {
+                                "key": "",
+                                "value": "scheme:https",
+                                "type": "text",
+                                "disabled": true
+                            },
+                            {
+                                "key": "",
+                                "value": "path:/api/Account/RegisterMerchant",
+                                "type": "text",
+                                "disabled": true
+                            },
+                            {
+                                "key": "content-length",
+                                "value": "8542",
+                                "type": "text"
+                            },
+                            {
+                                "key": "pragma",
+                                "value": "no-cache",
+                                "type": "text"
+                            },
+                            {
+                                "key": "cache-control",
+                                "value": "no-cache",
+                                "type": "text"
+                            },
+                            {
+                                "key": "sec-ch-ua",
+                                "value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"99\", \"Google Chrome\";v=\"99\"",
+                                "type": "text"
+                            },
+                            {
+                                "key": "accept",
+                                "value": "application/json, text/plain, */*",
+                                "type": "text"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "sec-ch-ua-mobile",
+                                "value": "?0",
+                                "type": "text"
+                            },
+                            {
+                                "key": "user-agent",
+                                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36",
+                                "type": "text"
+                            },
+                            {
+                                "key": "sec-ch-ua-platform",
+                                "value": "\"macOS\"",
+                                "type": "text"
+                            },
+                            {
+                                "key": "origin",
+                                "value": "https://static-qa.mdapps-staging.com",
+                                "type": "text"
+                            },
+                            {
+                                "key": "sec-fetch-site",
+                                "value": "same-site",
+                                "type": "text"
+                            },
+                            {
+                                "key": "sec-fetch-mode",
+                                "value": "cors",
+                                "type": "text"
+                            },
+                            {
+                                "key": "sec-fetch-dest",
+                                "value": "empty",
+                                "type": "text"
+                            },
+                            {
+                                "key": "referer",
+                                "value": "https://static-qa.mdapps-staging.com/",
+                                "type": "text"
+                            },
+                            {
+                                "key": "accept-encoding",
+                                "value": "gzip, deflate, br",
+                                "type": "text"
+                            },
+                            {
+                                "key": "accept-language",
+                                "value": "es-419,es;q=0.9",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n \"cityApplication\": 149,\r\n \"commercialEndorsmentEntityId\": 1,\r\n \"companyManagerEmail\": \"mtetws@1xqmqvj.com\",\r\n \"electronicEmailInvoice\": \"1mkh55f@g7b1n9.com\",\r\n \"companyName\": \"claro2\",\r\n \"companyDocumentType\": \"05\",\r\n \"companyDocumentNo\": \"508131748\",\r\n \"verificationDigit\": \"8\",\r\n \"economicActivityId\": 68,\r\n \"companyLandline\": \"8967868768\",\r\n \"companyCell\": \"3452426262\",\r\n \"companyCity\": 149,\r\n \"companyAddress\": \"jhgvjhvjhgv\",\r\n \"companyAddressComplement\": \"jhgvjhgcjh\",\r\n \"boFirstName\": \"vanesa\",\r\n \"boLastName\": \"sora\",\r\n \"boIdentificationType\": \"02\",\r\n \"boIdentificationNo\": \"516096222\",\r\n \"boPassportNo\": \"338931475\",\r\n \"boIssueDate\": \"1993-3-17\",\r\n \"boBirthDate\": \"1993-3-17\",\r\n \"boEmail\": \"xxj011@1nlizdu.com\",\r\n \"boPhoneNumber\": \"3567766665\",\r\n \"cityBirth\": 149,\r\n \"nationality\": \"colombia\",\r\n \"genre\": \"Masculino\",\r\n \"cityLocation\": 149,\r\n \"address\": \"jhygjhgjhgvj\",\r\n \"addressComplement\": \"gjhhgfjhg\",\r\n \"landLine\": \"5555555\",\r\n \"profession\": \"jhgvjhgvjhg\",\r\n \"amFirstName\": \"vanesa\",\r\n \"amLastName\": \"sora\",\r\n \"amIdentificationNo\": \"729783598\",\r\n \"amPassportNo\": \"680808551\",\r\n \"amIdentificationType\": \"02\",\r\n \"amEmail\": \"xlvjvp@1cheep.com\",\r\n \"amPhoneNumber\": \"3567766665\",\r\n \"city\": 149,\r\n \"password\": \"1uekr6x*A\",\r\n \"amIssueDate\": \"1993-3-17\",\r\n \"amBirthDate\": \"1993-3-17\",\r\n \"isNaturalPerson\": true,\r\n \"dataManagementPolicy\": true,\r\n \"hostName\": \"Unknown\",\r\n \"termsConditionsAccepted\": true,\r\n \"hashDT\": \"e2867ed65be0197f53188f900f5848f3350396fa8e481dc807e346b7c5da63be\",\r\n \"hashTC\": \"eb056322d3a2ed8b282cefeb3a5cb4b3\",\r\n \"purposeIds\": \"[7,8,9]\",\r\n \"amEmailCiphered\": \"RVP3fyLbVomFaKbkmdgMeCNpO4Uniep/kJh2vVmmI99rvkKhuJ3jpe0xNL0tshO4OGXu7sU5q9vhycIGZwJlup/6lYmLdh+Lv+34qNpWMFd59yM5Ho0rBBNgJoxUsrd+mT3vpicxCbCBljUYtJvnODlEW+bsLZzkfCdi0/hEt+OS8y/BYHe5fpzKRLRI0TumbENVCjAHgzhSKIInYAj/R99HevrGrgpm/vMxc7qbeeeUgIXeKJOs8krPkZCxV9qYUtXbk7wwrcjIhcNCqaM6AdWeYoUn1WW5k1hx6Ip2ZsUD+jy2ci35kBnPz0XfaoZ3fN8qXskw3Xxs1GT6jZvhfEcdwlNTEifglC0vea4kHhFoX6rHD4zM4zXG7QZXR/jV5tq2kiFNeK7WnfoBuv7GoRIoMTQFodDjBSlGw9dXbomGGXKtRGjJskg/9jwlILS25CIxhFDrdLe5Hu2PyvB/f6eK3QoXudYbw9J9Pe6XpkFdZF1fXGNkoOe/Ay5UA2cBYA06wh8nAbcgCh8abgKMkIYNpVCguVDUlt61DAJIXnMYU+TDHsifwcc1YeOOJiUy6ZtvQXjN2k9dHuZSNuAqH0PYItqDXMaR+/qcvKIruwtiqa2nx4GXmuVcM0XtYbC9t+5T0NkyXW5voqS9Wyk3NH8a0ooWzAIQ901BK/xGRPM=\",\r\n \"boEmailCiphered\": \"MTFzPvzB8AD7J6IrDruqsU8DVPmmnxGAWxqUfsThtkFDwORKFaLrTLpoBNtIDCV2x603qGiPCDPP0domgrgyeerp9jHNhE/8mJ4hvBtBxb42BF9Idx51nmmn2GqD/ZHWfiXWu4uMO1aD3zG1KRIakHetzRhBkzL1XYvf4G/2WXWmmmCtCASfPBEEPBhKE30ZxYnCP2rHwY+aIE46UoOggYb/xDNhywsr/Jk7PRDLAeAb/dRTVWoVh3WEpbvNkOyHZ5HN/8Rpapbq5Qo4hA1fAFQ0ANkOu22G/tUnRU/aB7IsusUgDm/WCq69SQtjSNk/5wxoGmt0OZcryNmmZDc1ZoAO8xNw9xsPUFuJJAub3ClQ4Zw7QLfAjLjh9ayFlegRNDdYlpRj/2J6UWc6UgY0PUY/t4vkHTeRBhv3kk3usicLpz2o4ehdJbWQXv2wszIsbsLlF8DB49B9mJ+4F2l1O5Z8qARzUFAolEsiUXXCQ0pjXQyVAlV3caaPiRXHQdL/eROOBKeu1IkkXga1AxqTPFFPQ5n5I53gDkaStwHk4/3ieIwwE+41pmM80xYAhbqXdGIsinW939E/e+RDVtQ9xX1y4P7ds4KQhPTYK8r3wiQmk5TqVamC8k5nVx0N5GzlpWiQhiawJIE1muq9fitbSjD0rhYbr+bKcuJkbx/l04Y=\",\r\n \"companyManagerEmailCiphered\": \"dLh4l+07IswX3B0rHiRSy6kkpgB/horwmJeUG17s6kLMw+GW0TeoBLTmlSh99dFSi92qgFgsSrOftwElQfR7peYwx2z+JlzLF4pcvQQCO7OP/Kh+Anv83aEOf6949BtMGmrBpV7x/kD0cH9dilWjlQsL02/L+TZsMpBI8/MTl1xE1QiREzOfDhUQrzxlhHD8eammRJ7D+Q/3hylFpMOcEQneXhSI3Y52F9bd6XJYWSCN1myJNAhTMVnVPkAgiCjkSeWPXllwEHiB597mG21FXIYWIK9kejskl17zaxSvNuuVdwUQT2HOifL6YuFCMC3NixqfopbmfCIV3mOLaRPgLr4zgITz0occQP294D3ONM0amuyHGR2DbbAqgk6FzbFXddLXcId0o2dMdHu/LnJ5X0sNVM1uV9pl6wb+C+OUW90vAH/TOvBn/jwr9zs8yZelc3XQbxJLd39Ecmf1cRC4X3nbl6Sp62nx7G9Ehj171LMygKO6sGy5xkl4sG79+jpTFDy4tpWTaV8L6blIuvzuGOZFKMf54hNSnk0IIORBHzP5LI/O7VdPy2w5O19sPXm75SFRiOhYIbMXFXYPm0srDE4xF/xSiKdJE2369wMK6pm9yUbUvU9FtPfSyfZygQKGfx7hpbsErFEktBl1TE9+BnZPMcDaVaADogAqW30viIs=\",\r\n \"amIdentificationNoCiphered\": \"EIhgVeQLhocvFOyDECvBziBEEk+wH20I2845qO44HsOmo0pHeuxjdZXNZVoUsp93lLpe8AM5yufuS6Xb/pil4zr7Eu8IOlhd+pBqrbESb0bvlVRYpJAaWn6/fGBPXd15sd44fs854/HxeAvPAkPXwhq6y/IMmpUgb6N23xLgBGD1+XvQorxnXjswvkIMFAHwSBTJbAq6TpgBJLZPtnGncSduRxpTR09iCmvL+OWaTHTGKB4NNK9SdJC7q63uoI1WUSGe59e2jxmLllWzV1Qy3sEfB+tazU98ulayVaWOocl4wEnOsJ5fW7+sPs9ULAgeN3QcL2rpoa/mB6LC5fGOd46aBaN7CHQ8o9UwvV+zhLEBtj5ou5y+wllKJO6jz6yvS6h9lkQ/Gq+hJi58dPAG8IqhsSOrVoxbGXOPpp4yqNtS+qlQp10lN8jSmaqUOzYdFPWY8ISnDIwZBK8Ns9zyjnScqGGWyOHeXe+CrC0KwVbCgs5imNrf7wlaAUrar0tCECeVS9ynq7StYDxcXcgag2ENIPjthbg+xpnS1cgSMvNOEkxPrFgBfYPAv21s3w505TQKLT1pXuoHRyf0HaAkEc5YBBt6X1xqPAWih4AELsO1Jc37xbxrc4jIN9AlecDfd2obykPQBjIRBsJR2hT7cFhXFLepI5eelnb7+DD1Ek0=\",\r\n \"amPassportNoCiphered\": \"\",\r\n \"boIdentificationNoCiphered\": \"pZERAXVf7uzXz0Z93ew+oxf1byRxxmlq609mQOVZh2I260uCaDV7rRYCUOtY8xna6If/UdKzO8GH0wVlY+HwPg765oPD4swATMdBJMXmaAWN89JJGO4sTX9FwFmAffYcYHwk3wjKhDvb0RTfJPLjTQlE2VZf5hgjyCcP9tTCGiZadfVb4yi6URIRV+lzoBhRFu8XGEMDEy2UeLn6pTjdLF4dGwhuTLImi84nYdEOeonuto0A8PdGIkkcvyOYcPxSirkKpqDWiSs8Eoy2SScUwtRfrq5DZpEpxxOlZC7gndN6l1is4xL8mQPr0jqyKcgFC9XUAo2jMAiq6yL8qeeK9lKc2h3JS4vAwID42xKKqVg/eAj/tUyXdmPyiUcWuMjZgX0uU9n7l9cSIFX8pfzk9+D3mUtG5nQCQMydSOQMuszVLjatHt/OzDi4I9MgfFz+SRyWI3++hMjdF5z1QeOkUI2L4z+TylHZodOeV8ZnsGB0Z9Khwe6YJqgIzohloM9LQy635M/w0TBP7Nr+z2ZyM9ynSA9z1L7WxB2oVPdx5So4qbbh+z865d3XkN+lUB/B6YJvgZolhIm8rKIJmeNIQyWuNiQUSq8wxkfeUi2053bZ25UaYB23TYpltVymUBrE/aZ8XCSHlH0+JIwntpsXpPn3/ZUgRi8k2EcqxvJcMUM=\",\r\n \"boPassportNoCiphered\": \"\",\r\n \"companyDocumentNoCiphered\": \"GeCKjl7n2YPoi0M5ej/Ku0fBq3SnMgLyU9uwyRFytQgmvjwsxFQz8NPuvJ5tQOoD2lIA4qbEgIYkUcShCSmgF5BAgL+FXj1s5vRYEVzIvWT5JaDdYGWFYjCr0wjeRUeyxCcn2IKBurw6QXL1VHhmD+BRhPU1eA2E2A9QyHC6EGvQZaryr9BzQUpdf2cGAxOc+xx5LXue6XcY9n6ugLwjQ4uVU2/LpqQH6+Uk45diuDxVWyZubVp3eT/1wxCr2iPNGHeAIRgzhFFHQ3DNmUh9AwySf2d+qGreUMlnJb4bJsy+V3GXjoIdp2Edt3py8cpTcEagD9JGXehDsCMZMwDiYxccD0Pmep2bXxG6b6iQJ9Noqdob1BM1C4XvHl33iJOA3vI5HvQn0DIWD58bI8NmEOpVx0nU0FLCRGkYP9CLXqnaYw8N1bxiaiDeJz0wh53qY8zrQQT2CaWLNZhgMSPy0I+cGfxWQqZT2nEj2srMygYqBKlthFjdFjkefbqeARbhYW5oy7lV2mxXo94v73fOZ7Qhf/6Q3BC8QFWGOsSm5NJgDMXrDZKCYyMokCoYjGRnmC767HyEa/dR8YC0+GuhtmzzEjnhGVKTCW2wmHKi439mm1XY1fLANGeKIhWvLFj7W+NbUv+YTyrhQG8j1cFK8z25TkuGZoGKethwMhNKALA=\",\r\n \"passwordCiphered\": \"ox6rr/6ZNVAUS9GBr35z5uyUKVwGEP7aDK7oBVb2nLvxkmCJ1WlZHjopXE+dPXAqsbk1Ls82sciPIIyW16MXSUjCZCxuV9Gi9GIyCHbClryKbqBfh+gLwR+E3/21rBEVXlfLFxXM+0ncJG6QCSUxnw8kY9AcjNwCus8hYgiTxO0Iip51PQFk1k0kslT30lNwcLTbU3EO8yBYctxUVfab8+vgNMtYAVmiM5ROwm3DpjNurGVNlACmtrAP1LlWkuxLSyFrNvTfHjAtCq6t36UZW8d9AM+ej0XQA+8+VVY6JvI7cX9dy9945C2hVhU4z95R9cVzm7qpvcTteXRohH1YfCN9+lnHduIO8SnwYr7KthMN33MHqoaGjW+Edy8NbyQBs+JPheO9V/TXbSEfFLlKHvcoXkdq3LFUaKaWGfhqxDjw4U6DClDC4qn2g8u+JtdXGj79UlDgL5k3ODt0lQnCSE1/KV9HM9BmRpq7UytQR8isZ0bBFeG60WkfzLpBFWOv3p0wcCf1VX/y5yregiKZ/77PzlxUWRGQ6A6uCceUo0SvUHLK0t0FtZnXfBZbC4z9VJe0850QJY+RD9c9JFQtOCdEAnaiUH96BkNr2gtsiAPBiwjMXCuPLmpUZcqSiEdRXtagVND+86JgaKZf5jxavZnK9Lz6ZXhxIdh1l2yHZ/A=\",\r\n \"amIssueDateCiphered\": \"hDKYYUe1kw8mCxnJbKt5xdMBQOAlQ9LHXT5ETqTl8uSai5GnCaFyOlFsJKTaar06z/J7MQmX3JNURq/yoHPSIio+XyOFyPq9oJUQGd6Rrwp3LOJDvkaEm/aj+gABmNifjh4we5aCf7nWTLkD8LWKRjVei+yBlpiL3bG50tcLMHQe/yhPnkdagArqbrQYh4GFxQ/WP6lUhL/ojyAjQdB9AWppALk1GjLNhBYsfydXvMHXWh0QBQ6gJy3kXPo6l0CjHpgLo6buN8v0Fh5kO5Ip52H+wGK707kSIEXOPyoRLzfnABJCA5OzRBmEMvpiBAUMXdtt6sQuEAomQ3cUnIE5H4DOg3oPTxULMJnSNt7muYU7FEE5SXl96FxjGqd1FhBAqSjK73xXA0LIi+yowEGommKVGpG/X8t1VcAMj0T3pQT/yt2nPLlwgK/cxWNXh9BTPqSMCCzS8TuGJ6qKIq7PC0+Pr4gTa+sptPg8DSQhVuNGDoPZCL67AZcczSuSyMkC3UM7NihJYov+wVCPybRF7LVX1ZdKLQqmfydtr8ZcxilnLHh399CNy2VUpMhtHkIp14sGgr4NBZrTQmAT/P1rjZ5nLPuLzO0d+CBUuMYdvlMFI9Grobf8GJ8DgZQi6/sjm9+G3OdHcVOoYMqV/o4mqQuNP2c6bzmZYnCAGBSVdjY=\",\r\n \"BoIssueDateCiphered\": \"hDKYYUe1kw8mCxnJbKt5xdMBQOAlQ9LHXT5ETqTl8uSai5GnCaFyOlFsJKTaar06z/J7MQmX3JNURq/yoHPSIio+XyOFyPq9oJUQGd6Rrwp3LOJDvkaEm/aj+gABmNifjh4we5aCf7nWTLkD8LWKRjVei+yBlpiL3bG50tcLMHQe/yhPnkdagArqbrQYh4GFxQ/WP6lUhL/ojyAjQdB9AWppALk1GjLNhBYsfydXvMHXWh0QBQ6gJy3kXPo6l0CjHpgLo6buN8v0Fh5kO5Ip52H+wGK707kSIEXOPyoRLzfnABJCA5OzRBmEMvpiBAUMXdtt6sQuEAomQ3cUnIE5H4DOg3oPTxULMJnSNt7muYU7FEE5SXl96FxjGqd1FhBAqSjK73xXA0LIi+yowEGommKVGpG/X8t1VcAMj0T3pQT/yt2nPLlwgK/cxWNXh9BTPqSMCCzS8TuGJ6qKIq7PC0+Pr4gTa+sptPg8DSQhVuNGDoPZCL67AZcczSuSyMkC3UM7NihJYov+wVCPybRF7LVX1ZdKLQqmfydtr8ZcxilnLHh399CNy2VUpMhtHkIp14sGgr4NBZrTQmAT/P1rjZ5nLPuLzO0d+CBUuMYdvlMFI9Grobf8GJ8DgZQi6/sjm9+G3OdHcVOoYMqV/o4mqQuNP2c6bzmZYnCAGBSVdjY=\",\r\n \"electronicEmailInvoiceCiphered\": \"T/2bdw4rYeU1+uATQ4mxi/uhQ25JtWnOWpIs1qFIOvZRnD4h1VUoyFtNmBUk1nh1JZJKzL3T3Ukif8TjecwRnOVN/yfPYCxeEkaBYS76vJfJr73jNXT7UDpiKv1A4MxJEPyYix/SYy+EXdZLT0lR3EcEWTMciGfNjx+q6qH+XI0CnmpRPCvbbQmvJe6C+bB/cnfGWC3UEy4m6RzwAWr1Tt4pfM2+2oelsg+I1meZhdYTIDwI8wKEkgNR9fxqfMkJWWfbdgQ3ypkdKZpb5v+SpwVyXA3Mx165+HQNgoWiUdQ/Q5P693RNdgPIvjUAKg28CfYnISVQlqOXxe/km9CmCnc0ho7dO6TKTUXg3tijR6mYh8PquSuxniGalOnv9Kmh3RUMKAm3UzWojPAkn6YQy1n0zWPp0lCVwKiKFGtA3WIkDVtlF6x2QTCIK0c41/QjYOw8Lw2HaIdSfOtvFhkkv3zb0C6PKk2JqZ8Ivwr54dGjkJeA3bDJ28LQNya64Sd6vGcbQPrbzw0bn4ujEJHCeJs5MHIpPm9Q8ylkyzA7azQ6/NyHxSPnouJz1mTElvEGCHFRyaiP2AMO+LuUmLLtyau1SXtUFvJAf9vgPv20rY0AhUENOCeJCnRbl6XnzCvJCcvCUoHyUZWBiNz5+JABOITRdlm13Nu9Ih8s80FHjt4=\",\r\n \"boIssueDateCiphered\": \"SkkMN/nSKu0+05orP+OWaALn723LNLpxSbmDs5r3OiznHqh4f5ybX4pawoHLhKllUp3h6GsgOY+K4zzvL6l4IJdrKyfH0nMgtmW0FCEjVS52n8hjP5j1uN5w8/yxXpy9pUDKHt6tfUuxJftkxmGiJJUR3XGGo/VBMLKFY0EBIvGqugGIx1YT2Fm2+kIQfAOeqcNbEdAZcVeM5+uxxa67jazpVwrERl8mUtkwWiZJs9Dfq5Pqv0hWmjPFkbnQt8pYp0xcphV2ZJjzEx72q3+/iHs5iiHAo1rwkr3dZ09MQVzQg4QE+fCXo2KDHHlltkkMqW58ioHsQfmVaFVSpSln22/UK6KBun+NHuH5/eJsKtm9LoLhJGGkj0Mw3HDGj7V0ntgQ0rtr+gPGATjABUl/H2E3aXHJZBNkxIJ1SYtT3jEkfpz8ZHyoeexuP6tI58RFMVBtxQb/hUSekblfRogtwTJkgK+G1umkVCIoDxcGACUyhEBRXZFaiYNR0i+e+SprhuNOt3fnP59yEeDI36q4F2uJ/s9AyqDIEaoJzAFmBKqFQn5RQJfSZe2+lgDpDPPF6EZO4o9fgh+nEzSE/B0q8cWZogGBheP/gIdrzHvhO4YDUflVN792zoWumFuEXg1QYouhGHnliloDIYf3MRTYMPkFsM55/36vkcN6LCFZeIM=\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/Account/RegisterMerchant",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "Account",
+                                "RegisterMerchant"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "4f1927ff-28c0-4017-8ece-98a16200cd46"
+        },
+        {
             "name": "Token K7 Copy",
             "event": [
                 {
@@ -398,53 +763,6 @@
             "response": []
         },
         {
-            "name": "Login",
-            "event": [
-                {
-                    "listen": "test",
-                    "script": {
-                        "id": "895f9da9-5b3f-4479-a904-fdb6d4aa8ef6",
-                        "exec": [
-                            "var jsonData = JSON.parse(responseBody);\r",
-                            "postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
-                        ],
-                        "type": "text/javascript"
-                    }
-                }
-            ],
-            "id": "825dfd43-162d-4fb7-913c-7cc0ebc2a26c",
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "request": {
-                "method": "POST",
-                "header": [
-                    {
-                        "key": "Content-Type",
-                        "name": "Content-Type",
-                        "type": "text",
-                        "value": "application/json"
-                    }
-                ],
-                "body": {
-                    "mode": "raw",
-                    "raw": "{\r\n   \"userName\": \"melisa.sandobal20222@yopmail.com\",\r\n   \"password\": \"Password@1\",\r\n   \"granttype\": \"password\",\r\n   \"EmailCiphered\":\"PAq8rK5513XhMzx/a+i0NoxX0IDHSB+0zd3YbwqNKYFBIudpYy5AYO03CwisRcEprep1rh5gaPiXPCzxddy4/jOJDRckmOgFadS/51Tv4cgx84IY7uamJkVWykI0Til425TG7Demn0PL/OoNI11vsTmHj3Sie1x0VL4X5Fqq8XJduVLQiw23xbGTDHJkCOEjGn8vzIqex5bMmshl5Lb/RoqOlijveM1RUDeqO5QiWgD79O7/9ob9MkG3LzSHdwRS3vXjvISfKMzNlkkjP1Go/8eZT6TGVV1K4/RZw73isyBSHAT3U4v8aPHpErtTHdNRrNH4tW5BV2qQho5OUHMp08iaUNR693l7hKjVRQra37x5eUNREaexZZsuexs32aE7/FrikMeWwnXp9376wuubkccESf/5TMiLna44qb3aIH7JRPqfz8lfeXUvm5l+oXJOhLhsj4QTHlO9RGIN5voWTPzQtZsp7Jan4e8Qv20KY6A1n2CiCMy/RDTZYa3uCjHVC2IMPhvymwwLG5Y2ukouFmYD0n5PgGD4UFjQy5ATtlK3nQ+cOV9ZjITvKpGGUUaVQRUaoV7KpWMJrBhstGeT435N3XC5k7IoKpKwWkKjpb7oF0NBzj8gRbI9uzHiKO0iELvlNg6nLG7P27CTVrlo0/libVa5qVpfooWXv+m4d24=\",\r\n   \"PasswordCiphered\":\"ABemHYK26QcfKyYrFsEToysI2ekLItYuaYKDtWq5gkTkQvqw+o5qBdmMhxkKfzyFLQSreS8bg9l41esw9B/763bmRd8HI8/X4a4ID36du+ozRwVPYUqVhdH+WGPAiPlXAvY+6OwvejjHWLplolT9s/2FreTGAJrJKQBlY5HjeXTr6yiIh6yDjzgOsdYFpKGcDqVX6evd79iSrBo5sPWMzQFXkTN9MbCf37gsuV7foysWstuI9Z8QCVxzkCJVoNYiwSqIHfS9M4fJr+E1G0onuw6MbxHlD0eUdy3NYvIM3K9Iobj6ekfwfp2o6PbDtaU8yLkJW8k+M6GsBHaWFY8VGFhNyz/AoV9ponvO8xbQRRPbz8WzTrPQsfqCV5xIsd647Bb4xuqI6As1mVWBM8ffaMmzKB1v7qVdC/jtSPaxR9hMK/ATtZQjmDhpsA5RlBemPnP4Tvg0imkowREVNtDm001Qeaje67LbJgmjqB9/Axaj0vcW2h7LJhMgqIVwtGQAFQb0ejBVhDPGFMpTSVSW87QIH9q+Tdhju8e+aeH+8W3AJ47rQ5iieV0Xfhv15fE+0PFTgH19jTXcT2WVWrpBRpnY0ChU22eQKoBYQ6hDkMQYgYZLoDzKtvgxnowoXx7oDSYYN+TZEJnXSZeNr+RBHiy2fFY3AMXYkkYPtRXNLcc=\",\r\n   \"recaptchaToken\":\"{{RecaptchaToken}}\",\r\n   \"userSession\" :\r\n   {\r\n        \"isMobile\" :  true,\r\n        \"browserName\" : \"DEMO\",\r\n        \"deviceName\" : \"DEMO\",\r\n        \"platform\" : \"demo\",\r\n        \"ipAddress\" : \"190.144.253.170\"\r\n   }\r\n}"
-                },
-                "url": {
-                    "raw": "{{url}}/api/account/Login",
-                    "host": [
-                        "{{url}}"
-                    ],
-                    "path": [
-                        "api",
-                        "account",
-                        "Login"
-                    ]
-                }
-            },
-            "response": []
-        },
-        {
             "name": "Get City",
             "id": "57d207ac-913d-4583-94f8-fa0811826956",
             "protocolProfileBehavior": {
@@ -502,6 +820,53 @@
                         "api",
                         "account",
                         "ForgotPassword"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Login",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "895f9da9-5b3f-4479-a904-fdb6d4aa8ef6",
+                        "exec": [
+                            "var jsonData = JSON.parse(responseBody);\r",
+                            "postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "825dfd43-162d-4fb7-913c-7cc0ebc2a26c",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n   \"userName\": \"melisa.sandobal20222@yopmail.com\",\r\n   \"password\": \"Password@1\",\r\n   \"granttype\": \"password\",\r\n   \"EmailCiphered\":\"PAq8rK5513XhMzx/a+i0NoxX0IDHSB+0zd3YbwqNKYFBIudpYy5AYO03CwisRcEprep1rh5gaPiXPCzxddy4/jOJDRckmOgFadS/51Tv4cgx84IY7uamJkVWykI0Til425TG7Demn0PL/OoNI11vsTmHj3Sie1x0VL4X5Fqq8XJduVLQiw23xbGTDHJkCOEjGn8vzIqex5bMmshl5Lb/RoqOlijveM1RUDeqO5QiWgD79O7/9ob9MkG3LzSHdwRS3vXjvISfKMzNlkkjP1Go/8eZT6TGVV1K4/RZw73isyBSHAT3U4v8aPHpErtTHdNRrNH4tW5BV2qQho5OUHMp08iaUNR693l7hKjVRQra37x5eUNREaexZZsuexs32aE7/FrikMeWwnXp9376wuubkccESf/5TMiLna44qb3aIH7JRPqfz8lfeXUvm5l+oXJOhLhsj4QTHlO9RGIN5voWTPzQtZsp7Jan4e8Qv20KY6A1n2CiCMy/RDTZYa3uCjHVC2IMPhvymwwLG5Y2ukouFmYD0n5PgGD4UFjQy5ATtlK3nQ+cOV9ZjITvKpGGUUaVQRUaoV7KpWMJrBhstGeT435N3XC5k7IoKpKwWkKjpb7oF0NBzj8gRbI9uzHiKO0iELvlNg6nLG7P27CTVrlo0/libVa5qVpfooWXv+m4d24=\",\r\n   \"PasswordCiphered\":\"ABemHYK26QcfKyYrFsEToysI2ekLItYuaYKDtWq5gkTkQvqw+o5qBdmMhxkKfzyFLQSreS8bg9l41esw9B/763bmRd8HI8/X4a4ID36du+ozRwVPYUqVhdH+WGPAiPlXAvY+6OwvejjHWLplolT9s/2FreTGAJrJKQBlY5HjeXTr6yiIh6yDjzgOsdYFpKGcDqVX6evd79iSrBo5sPWMzQFXkTN9MbCf37gsuV7foysWstuI9Z8QCVxzkCJVoNYiwSqIHfS9M4fJr+E1G0onuw6MbxHlD0eUdy3NYvIM3K9Iobj6ekfwfp2o6PbDtaU8yLkJW8k+M6GsBHaWFY8VGFhNyz/AoV9ponvO8xbQRRPbz8WzTrPQsfqCV5xIsd647Bb4xuqI6As1mVWBM8ffaMmzKB1v7qVdC/jtSPaxR9hMK/ATtZQjmDhpsA5RlBemPnP4Tvg0imkowREVNtDm001Qeaje67LbJgmjqB9/Axaj0vcW2h7LJhMgqIVwtGQAFQb0ejBVhDPGFMpTSVSW87QIH9q+Tdhju8e+aeH+8W3AJ47rQ5iieV0Xfhv15fE+0PFTgH19jTXcT2WVWrpBRpnY0ChU22eQKoBYQ6hDkMQYgYZLoDzKtvgxnowoXx7oDSYYN+TZEJnXSZeNr+RBHiy2fFY3AMXYkkYPtRXNLcc=\",\r\n   \"recaptchaToken\":\"{{RecaptchaToken}}\",\r\n   \"userSession\" :\r\n   {\r\n        \"isMobile\" :  true,\r\n        \"browserName\" : \"DEMO\",\r\n        \"deviceName\" : \"DEMO\",\r\n        \"platform\" : \"demo\",\r\n        \"ipAddress\" : \"190.144.253.170\"\r\n   }\r\n}"
+                },
+                "url": {
+                    "raw": "{{url}}/api/account/Login",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "account",
+                        "Login"
                     ]
                 }
             },
